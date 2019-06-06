@@ -14,3 +14,4 @@
 /dlib/*.jpg
 *.swp
 keras.json
+.tcshrc
