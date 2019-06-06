@@ -3,12 +3,16 @@
 /02/
 /03/
 /_DOC/
+/_DOC
 /__pycache__/
 /facenet/__pycache__/
 /data/
+/data
 /results/
+/results
 /RGB-D_Face_database
 /pictures/
+/pictures
 /dlib/pictures
 /facenet/images
 /dlib/*.jpg
