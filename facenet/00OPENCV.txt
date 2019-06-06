@@ -1,0 +1,95 @@
+opencv-utils (0.0.2)                       - OpenCV Utilities
+ctypes-opencv (0.8.0)                      - ctypes-opencv - A Python wrapper for OpenCV using ctypes
+opencv-wrapper (0.2.2)                     - A Python wrapper for OpenCV.
+opencv-cython (0.4)                        - An alternative OpenCV wrapper
+dajngo-opencv (0.3)                        - Django Opencv integratio
+opencv-python (4.1.0.25)                   - Wrapper package for OpenCV python bindings.
+opencv-iav (0.0.3)                         - Take a picture or record a video using OpenCV.
+opencv-python-armv7l (3.2.0)               - opencv-python on armv7l.
+simple-opencv-ocr (0.0)                    - A simple OCR with OpenCV
+thumbor-engine-opencv (1.0.0)              - OpenCV imaging engine for thumbor.
+opencv-contrib-python (4.1.0.25)           - Wrapper package for OpenCV python bindings.
+opencv-python-headless (4.1.0.25)          - Wrapper package for OpenCV python bindings.
+opencv-python-aarch64 (3.3.0.1)            - Wrapper package for OpenCV python bindings.
+flask-opencv-streamer (1.3)                - A Python package for easily streaming OpenCV footage, even with authentication
+opencv-contrib-python-headless (4.1.0.25)  - Wrapper package for OpenCV python bindings.
+opencv-python-inference-engine (4.1.1.1)   - Wrapper package for OpenCV 4 #e28e3c9 with Inference Engine 2019_R1.0.1 python bindings
+opencv-draw-tools-fernaperg (1.2.0)        - Library to help the drawing process with OpenCV. Thought to add labels to the images. Classification of images, etc.
+opencv-rolling-ball (1.0.1)                - Now function returns both result image and subtracted background
+tvl-backends-opencv (0.1.0a12)             - 
+pypylon-opencv-viewer (1.0.3)              - Impro function application while saving and getting image
+mosaicode-lib-c-opencv (1.0.0.dev1)        - Computer Music Programming Tool
+cvhelper (0.1.0)                           - A helper package for OpenCV
+rakali (0.0.11)                            - OpenCV Helper Tools
+simretina (0.1.4)                          - Simulation of the Retina with OpenCV.
+opencv_helpers (1.1)                       - Helper functions for opencv
+findit-client (0.1.4)                      - client for findit, with no opencv needed
+vidstab (1.6.1)                            - Video Stabilization using OpenCV
+opencv_engine (1.0.1)                      - OpenCV imaging engine for thumbor.
+ImageSource (1.0b2)                        - Image sequence abstraction for OpenCV.
+cvtools (0.1.6)                            - OpenCV tools for CV applications
+cvimage (0.1.1)                            - Chainable wrapper for OpenCV's python bindings.
+cvx (0.1.3)                                - OpenCV 'extension' with routinely used methods
+ObjectExtractor (0.2.2)                    - Extract objects from images with OpenCV
+facerecog (0.0.1)                          - PyQt OpenCV Face Recognition Widget
+fitch (0.3.4)                              - Android UI automation based on opencv
+unwrap-labels (1.0.5)                      - Library to unwrap labels using OpenCV
+CVtypes (0.1)                              - Python OpenCV wrapper using ctypes
+vec2img (0.1.0)                            - convert OpenCV samples file to images
+FaceExtractor (0.1.5)                      - Extract faces from images with OpenCV
+cmapy (0.6)                                - Use Matplotlib colormaps with OpenCV in Python.
+cv2-wrapper (0.1)                          - Wrapper for python opencv 2.4.12 32bit
+cv2wrap (1.0)                              - Wrapper for python opencv 2.4.12 32bit
+vext.OpenCV (0.5.20)                       - Use system OpenCV from a virtualenv
+rapideye (0.1.4)                           - An Image Search Toolkit based on OpenCV.
+TiffCapture (0.1.6)                        - Brings the power of OpenCV to TIFF videos; provides interface to multi-part TIFFs compatible with OpenCV's VideoCapture.
+camera-fusion (0.0.8)                      - Multiple cameras calibration and fusion with OpenCV Python.
+pyimagevideo (1.0.1)                       - Demos of OpenCV, read/write videos, etc.
+remotecv (2.2.2)                           - remotecv is an OpenCV worker for facial and feature recognition
+big-g (1.0.3)                              - OpenCV object tracking for Big G experiments
+scvf (1.1.2)                               - a framework that wraps opencv for our needs in FRC
+atx (1.2.0)                                - Automation test library for android based on opencv
+EasyVision (0.0.3)                         - Easy Computer Vision Library using OpenCV.
+image-pyqt (0.0.2)                         - An Image Widget for display OpenCV Mat image
+hampy (1.4.1)                              - Simple Hamming Marker Detection using OpenCV
+helper_functions (2.0.11)                  - A simple module of simple function, for opencv and python3
+images2video (0.3)                         - Python images to video library using OpenCV
+head-pose (0.0.4)                          - Use opencv solvePnP to do head pose estimation
+CamCalib-jpvolt (0.1.0)                    - Opencv based camera calibration lib for stereo vision
+opencv_cffi (0.2.2)                        - A random subset of OpenCV's functionality, wrapped via CFFI
+nionswift-video-capture (0.1.0)            - Capture video from built-in camera using OpenCV.
+bayesian-sgm (1.0.0)                       - Um segmentador de cores bayesiano para a OpenCV.
+Tippy (0.1)                                - another Toolbox for Image Processing in PYthon, based on OpenCV
+opencvutils (0.9.4)                        - Simple OpenCV 3.x image processing functions
+pyglview (1.1.7)                           - Python OpenGL direct viewer instead of OpenCV imshow/waitKey.
+facereg (0.2.0)                            - Face recognition from identity cards with OpenCV and Deep Learning.
+athentoimaging (0.1)                       - Image cleaning and OCR improvement package in Python using OpenCV.
+Willow (1.1)                               - A Python image library that sits on top of Pillow, Wand and OpenCV
+pyvision3 (0.1.5)                          - Facilitates computer vision research and prototyping using python and openCV
+image-mining (0.1.6)                       - Extract useful information from scanned images using OpenCV
+wxPyGameVideoPlayer (0.1.5.0)              - Just a simple video player using wxPython, PyGame, and OpenCV
+cvauto (0.0.5)                             - It's a gui automation pkg, and base on opencv, just a simple picture match.
+cvui (2.7)                                 - A (very) simple UI lib built on top of OpenCV drawing primitives
+imgui-datascience (0.2.9)                  - A set of utilities for data science using python, imgui, numpy and opencv
+imagecrop (0.0.16)                         - Use OpenCV to extract image crops using homography and feature matching
+pyopencv (2.1.0.wr1.2.0)                   - PyOpenCV - A Python wrapper for OpenCV 2.x using Boost.Python and NumPy
+scikit-surgeryopencvcpp (0.0.6)            - Image-guided surgery functions, in C++, using OpenCV and wrapped in Python.
+scenedetect (0.5)                          - A cross-platform, OpenCV-based video scene detection program and Python library.
+py-agender (0.0.8)                         - Simple opencv & tensorflow based solution to estimate Faces, Age and Gender on pictures
+cvloop (0.3.5)                             - cvloop allows online video transformation and evaluation with OpenCV. Designed for jupyter notebooks.
+teacv (0.1.0)                              - teacv is a tool for extend Python OpenCV modules with custom filters written in C++.
+scikit-surgeryutils (0.5.3)                - scikit-surgeryutils - Tests/demos utilities, based around opencv-contrib and PySide2
+vse (0.1.5)                                - A visual search engine using local features descriptors and bag of words, based on OpenCV
+cvbuilder (0.2.31)                         - Package for building OpenCV 4.1.0 including Python 3 bindings from the official sources.
+cv2-tools (2.2.3)                          - Library to help the drawing process with OpenCV. Thought to add labels to the images. Classification of images, etc.
+partypi (0.1.4)                            - Party Pi is a computer vision emotion detection game with OpenCV and Microsoft Oxford Emotion API.
+gif2numpy (1.3)                            - Convert single and multiple frame gif images to numpy images or to OpenCV without PIL or pillow
+visionmadeeasy (2019.2.17)                 - A module intended to abstract away a lot of the complexity of using OpenCV to detect and recognise faces for beginner programmers.
+PILasOPENCV (2.4)                          - Wrapper for Image functions which are used and called in the manner of the famous PIL/Pillow module but work internally with OpenCV.
+vidgear (0.1.4)                            - Powerful Multi-Threaded OpenCV and FFmpeg based Turbo Video Processing Python Library with unique State-of-the-Art Features.
+centroid-tracker (0.0.9)                   - A small centroid tracker library based off https://www.pyimagesearch.com/2018/07/23/simple-object-tracking-with-opencv/
+cv_utils (0.2.0)                           - Computer Vision or OpenCV python utility functions. It also includes basic utilities for image processing and computer vision related tasks.
+morecvutils (0.9.2)                        - Computer Vision utilities, Cohen-Sutherland line clipping, OpenCV plot helpers for Optical Flow and Blob Analysis, AVI codec helpers
+imutils (0.5.2)                            - A series of convenience functions to make basic image processing functions such as translation, rotation, resizing, skeletonization, displaying Matplotlib images, sorting contours, detecting edges, and much more easier with OpenCV and both Python 2.7 and Python 3.
+PySimpleGUI (3.37.0)                       - GUI SDK Launched in 2018 Actively developed and supported. Super-simple to create custom GUI's.  Python 2.7 & 3 Support. 100 Demo programs & Cookbook for rapid start. Extensive documentation. Examples using Machine Learning(GUI, OpenCV Integration,  Chatterbot), Rainmeter Style Floating Desktop Widgets, Matplotlib + Pyplot integration, add GUI to command line scripts, PDF & Image Viewer. Great for beginners as well as advanced GUI programmers
+PySimpleGUI27 (1.37.0)                     - Python 2.7 version of PySimpleGUI - GUI SDK Launched in 2018 Actively developed and supported. Super-simple to create custom GUI's.  Python 2.7 & 3 Support. 100 Demo programs & Cookbook for rapid start. Extensive documentation. Examples using Machine Learning(GUI, OpenCV Integration,  Chatterbot), Rainmeter Style Floating Desktop Widgets, Matplotlib + Pyplot integration, add GUI to command line scripts, PDF & Image Viewer. Great for beginners as well as advanced GUI programmers

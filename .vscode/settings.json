@@ -1,0 +1,9 @@
+{
+    "python.pythonPath": "/TOOL/Dev/anaconda/anaconda3/bin/python",
+    "editor.fontFamily": "Monoid-Retina, mplus-1mn-medium, mplus-1mn-regular, mplus-1mn-light, CamingoCode-Regular, CamingoCode-Italic, BPmono-Italic, mplus-2m-medium, BPmono, SF Mono, PT Mono, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 11,
+    "workbench.colorCustomizations": {
+        "editor.background": "#000000",
+        "editor.foreground": "#ffffff"
+    }
+}

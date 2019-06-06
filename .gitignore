@@ -1,0 +1,16 @@
+/00/
+/01/
+/02/
+/03/
+/_DOC/
+/__pycache__/
+/facenet/__pycache__/
+/data/
+/results/
+/RGB-D_Face_database
+/pictures/
+/dlib/pictures
+/facenet/images
+/dlib/*.jpg
+*.swp
+keras.json

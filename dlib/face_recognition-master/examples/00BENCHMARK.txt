@@ -1,0 +1,28 @@
+nakazawa@UX-IMAC5K.local[339]#p benchmark.py
+Benchmarks (Note: All benchmarks are only using a single CPU core)
+
+Timings at 240p:
+ - Face locations: 0.0360s (27.75 fps)
+ - Face landmarks: 0.0014s (696.43 fps)
+ - Encode face (inc. landmarks): 0.0149s (67.21 fps)
+ - End-to-end: 0.0521s (19.20 fps)
+
+Timings at 480p:
+ - Face locations: 0.1448s (6.91 fps)
+ - Face landmarks: 0.0014s (696.19 fps)
+ - Encode face (inc. landmarks): 0.0154s (65.10 fps)
+ - End-to-end: 0.1594s (6.27 fps)
+
+Timings at 720p:
+ - Face locations: 0.3234s (3.09 fps)
+ - Face landmarks: 0.0014s (690.91 fps)
+ - Encode face (inc. landmarks): 0.0156s (63.95 fps)
+ - End-to-end: 0.3389s (2.95 fps)
+
+Timings at 1080p:
+ - Face locations: 0.7228s (1.38 fps)
+ - Face landmarks: 0.0015s (684.24 fps)
+ - Encode face (inc. landmarks): 0.0154s (64.88 fps)
+ - End-to-end: 0.7331s (1.36 fps)
+
+nakazawa@UX-IMAC5K.local[340]#

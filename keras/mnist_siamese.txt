@@ -1,0 +1,47 @@
+[plaidml] nakazawa@UX-IMAC5K.local[340]#p mnist_siamese.py
+Using TensorFlow backend.
+Train on 108400 samples, validate on 17820 samples
+Epoch 1/20
+2019-05-30 14:29:52.660615: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+108400/108400 [==============================] - 3s 24us/step - loss: 0.0963 - accuracy: 0.8831 - val_loss: 0.0463 - val_accuracy: 0.9443
+Epoch 2/20
+108400/108400 [==============================] - 2s 20us/step - loss: 0.0418 - accuracy: 0.9565 - val_loss: 0.0306 - val_accuracy: 0.9682
+Epoch 3/20
+108400/108400 [==============================] - 2s 20us/step - loss: 0.0276 - accuracy: 0.9723 - val_loss: 0.0250 - val_accuracy: 0.9723
+Epoch 4/20
+108400/108400 [==============================] - 2s 20us/step - loss: 0.0216 - accuracy: 0.9770 - val_loss: 0.0237 - val_accuracy: 0.9714
+Epoch 5/20
+108400/108400 [==============================] - 2s 20us/step - loss: 0.0180 - accuracy: 0.9809 - val_loss: 0.0219 - val_accuracy: 0.9740
+Epoch 6/20
+108400/108400 [==============================] - 2s 20us/step - loss: 0.0159 - accuracy: 0.9831 - val_loss: 0.0234 - val_accuracy: 0.9723
+Epoch 7/20
+108400/108400 [==============================] - 2s 20us/step - loss: 0.0145 - accuracy: 0.9845 - val_loss: 0.0234 - val_accuracy: 0.9717
+Epoch 8/20
+108400/108400 [==============================] - 2s 20us/step - loss: 0.0131 - accuracy: 0.9859 - val_loss: 0.0223 - val_accuracy: 0.9736
+Epoch 9/20
+108400/108400 [==============================] - 2s 22us/step - loss: 0.0121 - accuracy: 0.9872 - val_loss: 0.0223 - val_accuracy: 0.9743
+Epoch 10/20
+108400/108400 [==============================] - 2s 21us/step - loss: 0.0118 - accuracy: 0.9873 - val_loss: 0.0234 - val_accuracy: 0.9722
+Epoch 11/20
+108400/108400 [==============================] - 2s 22us/step - loss: 0.0111 - accuracy: 0.9881 - val_loss: 0.0221 - val_accuracy: 0.9742
+Epoch 12/20
+108400/108400 [==============================] - 2s 20us/step - loss: 0.0106 - accuracy: 0.9887 - val_loss: 0.0226 - val_accuracy: 0.9733
+Epoch 13/20
+108400/108400 [==============================] - 2s 20us/step - loss: 0.0101 - accuracy: 0.9895 - val_loss: 0.0223 - val_accuracy: 0.9737
+Epoch 14/20
+108400/108400 [==============================] - 2s 20us/step - loss: 0.0096 - accuracy: 0.9899 - val_loss: 0.0242 - val_accuracy: 0.9714
+Epoch 15/20
+108400/108400 [==============================] - 2s 20us/step - loss: 0.0098 - accuracy: 0.9896 - val_loss: 0.0232 - val_accuracy: 0.9727
+Epoch 16/20
+108400/108400 [==============================] - 2s 20us/step - loss: 0.0091 - accuracy: 0.9901 - val_loss: 0.0213 - val_accuracy: 0.9755
+Epoch 17/20
+108400/108400 [==============================] - 2s 20us/step - loss: 0.0087 - accuracy: 0.9911 - val_loss: 0.0236 - val_accuracy: 0.9719
+Epoch 18/20
+108400/108400 [==============================] - 2s 23us/step - loss: 0.0089 - accuracy: 0.9904 - val_loss: 0.0249 - val_accuracy: 0.9708
+Epoch 19/20
+108400/108400 [==============================] - 2s 21us/step - loss: 0.0085 - accuracy: 0.9912 - val_loss: 0.0232 - val_accuracy: 0.9734
+Epoch 20/20
+108400/108400 [==============================] - 2s 20us/step - loss: 0.0084 - accuracy: 0.9911 - val_loss: 0.0231 - val_accuracy: 0.9723
+* Accuracy on training set: 99.58%
+* Accuracy on test set: 97.23%
+[plaidml] nakazawa@UX-IMAC5K.local[341]#

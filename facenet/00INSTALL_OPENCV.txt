@@ -1,0 +1,1170 @@
+[plaidml] nakazawa@UX-IMAC5K.local[423]#brew info opencv
+opencv: stable 4.1.0 (bottled)
+Open source computer vision library
+https://opencv.org/
+Not installed
+From: https://github.com/Homebrew/homebrew-core/blob/master/Formula/opencv.rb
+==> Dependencies
+Build: cmake ✘, pkg-config ✘
+Required: eigen ✘, ffmpeg ✘, glog ✘, harfbuzz ✘, jpeg ✔, libpng ✘, libtiff ✔, numpy ✘, openexr ✘, python ✘, python@2 ✘, tbb ✘
+==> Analytics
+install: 16,956 (30 days), 50,579 (90 days), 211,998 (365 days)
+install_on_request: 15,499 (30 days), 46,248 (90 days), 195,629 (365 days)
+build_error: 0 (30 days)
+[plaidml] nakazawa@UX-IMAC5K.local[424]#brew install opencv
+Updating Homebrew...
+==> Installing dependencies for opencv: eigen, aom, libpng, freetype, frei0r, gmp, libtasn1, nettle, p11-kit, libevent, unbound, gnutls, lame, fribidi, pcre, readline, sqlite, python, glib, pixman, cairo, graphite2, harfbuzz, libass, libbluray, libsoxr, libogg, libvorbis, libvpx, opencore-amr, openjpeg, opus, rtmpdump, flac, libsndfile, libsamplerate, rubberband, sdl2, snappy, speex, giflib, leptonica, tesseract, theora, x264, xvid, ffmpeg, gflags, glog, isl, mpfr, libmpc, gcc, openblas, python@2, numpy, ilmbase, openexr and tbb
+==> Installing opencv dependency: eigen
+==> Downloading https://homebrew.bintray.com/bottles/eigen-3.3.7.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/68/683c2dd898245f61c298d1f2675885e7c67ec7e18f6665df1ec56f088bd670f4?__gda__=exp=1559200501~hmac=23
+######################################################################## 100.0%
+==> Pouring eigen-3.3.7.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/eigen/3.3.7: 487 files, 6.5MB
+==> Installing opencv dependency: aom
+==> Downloading https://homebrew.bintray.com/bottles/aom-1.0.0.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/fd/fdcfd3f69fbf8c9d5d3277a9cc0aabe6e4d708e3c505724828078ef93d3c82f7?__gda__=exp=1559200506~hmac=32
+######################################################################## 100.0%
+==> Pouring aom-1.0.0.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/aom/1.0.0: 19 files, 12.6MB
+==> Installing opencv dependency: libpng
+==> Downloading https://homebrew.bintray.com/bottles/libpng-1.6.37.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/53/53bbd14cc27c86c16605e256e7646a1b5656c253abca084958c5d80a2961cb01?__gda__=exp=1559200511~hmac=bb
+######################################################################## 100.0%
+==> Pouring libpng-1.6.37.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/libpng/1.6.37: 27 files, 1.2MB
+==> Installing opencv dependency: freetype
+==> Downloading https://homebrew.bintray.com/bottles/freetype-2.10.0.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/d2/d231ab6634051c4b655bbfc07cd5b306ad5489d891ee2b105ed892347f2714af?__gda__=exp=1559200514~hmac=52
+######################################################################## 100.0%
+==> Pouring freetype-2.10.0.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/freetype/2.10.0: 61 files, 2.3MB
+==> Installing opencv dependency: frei0r
+==> Downloading https://homebrew.bintray.com/bottles/frei0r-1.6.1.mojave.bottle.1.tar.gz
+==> Downloading from https://akamai.bintray.com/a5/a509ee11dc4a3cd431a888c708d32c53d81e5ca67250520f91284d4370d946d4?__gda__=exp=1559200517~hmac=fc
+######################################################################## 100.0%
+==> Pouring frei0r-1.6.1.mojave.bottle.1.tar.gz
+🍺  /usr/local/Cellar/frei0r/1.6.1: 137 files, 2.0MB
+==> Installing opencv dependency: gmp
+==> Downloading https://homebrew.bintray.com/bottles/gmp-6.1.2_2.mojave.bottle.1.tar.gz
+==> Downloading from https://akamai.bintray.com/84/84f74594086bccc53bdb141f4d06d7847680374e255ebe016654da1e47db2dfc?__gda__=exp=1559200520~hmac=9d
+######################################################################## 100.0%
+==> Pouring gmp-6.1.2_2.mojave.bottle.1.tar.gz
+🍺  /usr/local/Cellar/gmp/6.1.2_2: 18 files, 3.1MB
+==> Installing opencv dependency: libtasn1
+==> Downloading https://homebrew.bintray.com/bottles/libtasn1-4.13.mojave.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring libtasn1-4.13.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/libtasn1/4.13: 59 files, 436KB
+==> Installing opencv dependency: nettle
+==> Downloading https://homebrew.bintray.com/bottles/nettle-3.4.1.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/9e/9e7f78a4cc96ca57f75ca1d37cc12c11655b7e0aa7109da4becd0408a1e2ed6b?__gda__=exp=1559200526~hmac=68
+######################################################################## 100.0%
+==> Pouring nettle-3.4.1.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/nettle/3.4.1: 85 files, 2MB
+==> Installing opencv dependency: p11-kit
+==> Downloading https://homebrew.bintray.com/bottles/p11-kit-0.23.16.1.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/49/49ffd7c971e56e2ef825e7af091064c301ca616bbe9092cd5c46a20f917783cc?__gda__=exp=1559200529~hmac=25
+######################################################################## 100.0%
+==> Pouring p11-kit-0.23.16.1.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/p11-kit/0.23.16.1: 63 files, 2.9MB
+==> Installing opencv dependency: libevent
+==> Downloading https://homebrew.bintray.com/bottles/libevent-2.1.10.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/3f/3f43999f92de5174fa646e00cb0998801af4865b0274ebf6c4de5d6df372c4be?__gda__=exp=1559200532~hmac=24
+######################################################################## 100.0%
+==> Pouring libevent-2.1.10.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/libevent/2.1.10: 857 files, 2.2MB
+==> Installing opencv dependency: unbound
+==> Downloading https://homebrew.bintray.com/bottles/unbound-1.9.1_1.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/38/3897bcc25b36315cbda263d5048f608fb32736caa1839c2117146b8295c74530?__gda__=exp=1559200536~hmac=7a
+######################################################################## 100.0%
+==> Pouring unbound-1.9.1_1.mojave.bottle.tar.gz
+==> Caveats
+To have launchd start unbound now and restart at startup:
+  sudo brew services start unbound
+==> Summary
+🍺  /usr/local/Cellar/unbound/1.9.1_1: 56 files, 4.8MB
+==> Installing opencv dependency: gnutls
+==> Downloading https://homebrew.bintray.com/bottles/gnutls-3.6.8.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/66/6679cf795332813d1e41778272f3e8283dc13435c637a1f3b94c98956b490c93?__gda__=exp=1559200539~hmac=34
+######################################################################## 100.0%
+==> Pouring gnutls-3.6.8.mojave.bottle.tar.gz
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+Certificate will not expire
+🍺  /usr/local/Cellar/gnutls/3.6.8: 1,208 files, 9.3MB
+==> Installing opencv dependency: lame
+==> Downloading https://homebrew.bintray.com/bottles/lame-3.100.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/73/737751faa513a68ac2499bb5cc607bc366e15dab8ff3bff5443567a455af5c3f?__gda__=exp=1559200549~hmac=df
+######################################################################## 100.0%
+==> Pouring lame-3.100.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/lame/3.100: 27 files, 2.1MB
+==> Installing opencv dependency: fribidi
+==> Downloading https://homebrew.bintray.com/bottles/fribidi-1.0.5.mojave.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring fribidi-1.0.5.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/fribidi/1.0.5: 66 files, 581.3KB
+==> Installing opencv dependency: pcre
+==> Downloading https://homebrew.bintray.com/bottles/pcre-8.43.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/08/08e7414a7641d1e184c936537ff67f72f52649374d2308b896d4146ccc2c08fe?__gda__=exp=1559200555~hmac=2f
+######################################################################## 100.0%
+==> Pouring pcre-8.43.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/pcre/8.43: 204 files, 5.5MB
+==> Installing opencv dependency: readline
+==> Downloading https://homebrew.bintray.com/bottles/readline-8.0.0_1.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/fa/faab004773e6449dd97971311cb62a9bbaa44f1483b82640e818f0c355c8266d?__gda__=exp=1559200559~hmac=29
+######################################################################## 100.0%
+==> Pouring readline-8.0.0_1.mojave.bottle.tar.gz
+==> Caveats
+readline is keg-only, which means it was not symlinked into /usr/local,
+because macOS provides the BSD libedit library, which shadows libreadline.
+In order to prevent conflicts when programs look for libreadline we are
+defaulting this GNU Readline installation to keg-only.
+
+For compilers to find readline you may need to set:
+  export LDFLAGS="-L/usr/local/opt/readline/lib"
+  export CPPFLAGS="-I/usr/local/opt/readline/include"
+
+==> Summary
+🍺  /usr/local/Cellar/readline/8.0.0_1: 48 files, 1.5MB
+==> Installing opencv dependency: sqlite
+==> Downloading https://homebrew.bintray.com/bottles/sqlite-3.28.0.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/e3/e360850758d2104b4ae9eab8ae57903a37b62c550c779ddf32100720f832508d?__gda__=exp=1559200561~hmac=94
+######################################################################## 100.0%
+==> Pouring sqlite-3.28.0.mojave.bottle.tar.gz
+==> Caveats
+sqlite is keg-only, which means it was not symlinked into /usr/local,
+because macOS provides an older sqlite3.
+
+If you need to have sqlite first in your PATH run:
+  echo 'export PATH="/usr/local/opt/sqlite/bin:$PATH"' >> ~/.bash_profile
+
+For compilers to find sqlite you may need to set:
+  export LDFLAGS="-L/usr/local/opt/sqlite/lib"
+  export CPPFLAGS="-I/usr/local/opt/sqlite/include"
+
+==> Summary
+🍺  /usr/local/Cellar/sqlite/3.28.0: 11 files, 3.7MB
+==> Installing opencv dependency: python
+==> Downloading https://homebrew.bintray.com/bottles/python-3.7.3.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/25/25e0099852136c4ef1efd221247d0f67aa71f7b624211b98898f8b46c612f40d?__gda__=exp=1559200564~hmac=37
+######################################################################## 100.0%
+==> Pouring python-3.7.3.mojave.bottle.tar.gz
+==> /usr/local/Cellar/python/3.7.3/bin/python3 -s setup.py --no-user-cfg install --force --verbose --install-scripts=/usr/local/Cellar/python/3.7.
+==> /usr/local/Cellar/python/3.7.3/bin/python3 -s setup.py --no-user-cfg install --force --verbose --install-scripts=/usr/local/Cellar/python/3.7.
+==> /usr/local/Cellar/python/3.7.3/bin/python3 -s setup.py --no-user-cfg install --force --verbose --install-scripts=/usr/local/Cellar/python/3.7.
+==> Caveats
+Python has been installed as
+  /usr/local/bin/python3
+
+Unversioned symlinks `python`, `python-config`, `pip` etc. pointing to
+`python3`, `python3-config`, `pip3` etc., respectively, have been installed into
+  /usr/local/opt/python/libexec/bin
+
+If you need Homebrew's Python 2.7 run
+  brew install python@2
+
+You can install Python packages with
+  pip3 install <package>
+They will install into the site-package directory
+  /usr/local/lib/python3.7/site-packages
+
+See: https://docs.brew.sh/Homebrew-and-Python
+==> Summary
+🍺  /usr/local/Cellar/python/3.7.3: 3,863 files, 59.8MB
+==> Installing opencv dependency: glib
+==> Downloading https://homebrew.bintray.com/bottles/glib-2.60.3.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/e5/e56cc0fef34e30a8017278f44c50b33762744e54fb8d7dc3c5a9362c67739e5e?__gda__=exp=1559200584~hmac=40
+######################################################################## 100.0%
+==> Pouring glib-2.60.3.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/glib/2.60.3: 429 files, 15.3MB
+==> Installing opencv dependency: pixman
+==> Downloading https://homebrew.bintray.com/bottles/pixman-0.38.4.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/39/3990b771ee29451c8a9bcb6cb077205ae08adc0d5af2faebf29197d13c36a51a?__gda__=exp=1559200588~hmac=d1
+######################################################################## 100.0%
+==> Pouring pixman-0.38.4.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/pixman/0.38.4: 13 files, 1.3MB
+==> Installing opencv dependency: cairo
+==> Downloading https://homebrew.bintray.com/bottles/cairo-1.16.0.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/20/204d0a3df9ebebef6f553b4a583351f14b84ca8682537941f2c04ba971999444?__gda__=exp=1559200591~hmac=9b
+######################################################################## 100.0%
+==> Pouring cairo-1.16.0.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/cairo/1.16.0: 117 files, 5.5MB
+==> Installing opencv dependency: graphite2
+==> Downloading https://homebrew.bintray.com/bottles/graphite2-1.3.13.mojave.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring graphite2-1.3.13.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/graphite2/1.3.13: 18 files, 232KB
+==> Installing opencv dependency: harfbuzz
+==> Downloading https://homebrew.bintray.com/bottles/harfbuzz-2.5.0.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/04/04eafffb87fc84914ad67f3b7d64c762158825833e12e1c999b21b006c9e255b?__gda__=exp=1559200597~hmac=0f
+######################################################################## 100.0%
+==> Pouring harfbuzz-2.5.0.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/harfbuzz/2.5.0: 150 files, 9.9MB
+==> Installing opencv dependency: libass
+==> Downloading https://homebrew.bintray.com/bottles/libass-0.14.0_1.mojave.bottle.1.tar.gz
+==> Downloading from https://akamai.bintray.com/ad/adf25e0a4a61f098662952861b1103493f2be98a14975b1cdd27c8aab3a9603a?__gda__=exp=1559200601~hmac=dd
+######################################################################## 100.0%
+==> Pouring libass-0.14.0_1.mojave.bottle.1.tar.gz
+🍺  /usr/local/Cellar/libass/0.14.0_1: 10 files, 509KB
+==> Installing opencv dependency: libbluray
+==> Downloading https://homebrew.bintray.com/bottles/libbluray-1.1.1.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/24/24eef45b0f6eb3bb19ae609d7dda031f590ef44520f541bd6d482ee65e4d31a8?__gda__=exp=1559200603~hmac=90
+######################################################################## 100.0%
+==> Pouring libbluray-1.1.1.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/libbluray/1.1.1: 21 files, 1.5MB
+==> Installing opencv dependency: libsoxr
+==> Downloading https://homebrew.bintray.com/bottles/libsoxr-0.1.3.mojave.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring libsoxr-0.1.3.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/libsoxr/0.1.3: 28 files, 242.4KB
+==> Installing opencv dependency: libogg
+==> Downloading https://homebrew.bintray.com/bottles/libogg-1.3.3.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/a6/a693f64d879c75f6380725c3b4b8516773cc6097c4116ae796677e7242568ced?__gda__=exp=1559200609~hmac=82
+######################################################################## 100.0%
+==> Pouring libogg-1.3.3.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/libogg/1.3.3: 97 files, 459.9KB
+==> Installing opencv dependency: libvorbis
+==> Downloading https://homebrew.bintray.com/bottles/libvorbis-1.3.6.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/ac/ac35ee835666c32cd678636e1d19899dfef55191bcc776eeddedcd5ad19eac03?__gda__=exp=1559200612~hmac=5a
+######################################################################## 100.0%
+==> Pouring libvorbis-1.3.6.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/libvorbis/1.3.6: 157 files, 2.3MB
+==> Installing opencv dependency: libvpx
+==> Downloading https://homebrew.bintray.com/bottles/libvpx-1.8.0.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/8a/8acc007976c337e0ea107c07e984c7924516b1ce70fe7a862af480de0998cb96?__gda__=exp=1559200618~hmac=85
+######################################################################## 100.0%
+==> Pouring libvpx-1.8.0.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/libvpx/1.8.0: 17 files, 1.5MB
+==> Installing opencv dependency: opencore-amr
+==> Downloading https://homebrew.bintray.com/bottles/opencore-amr-0.1.5.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/81/816d5463797b6412fd8944b98ab79d766dcf886b9eb37d83778fb7648d995603?__gda__=exp=1559200621~hmac=3b
+######################################################################## 100.0%
+==> Pouring opencore-amr-0.1.5.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/opencore-amr/0.1.5: 17 files, 645.4KB
+==> Installing opencv dependency: openjpeg
+==> Downloading https://homebrew.bintray.com/bottles/openjpeg-2.3.1.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/6d/6de317bfef3ab808ff5f3eb9c1aa47f77e7236fba8ad0d606b29b38eb47c321e?__gda__=exp=1559200623~hmac=fe
+######################################################################## 100.0%
+==> Pouring openjpeg-2.3.1.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/openjpeg/2.3.1: 516 files, 12.8MB
+==> Installing opencv dependency: opus
+==> Downloading https://homebrew.bintray.com/bottles/opus-1.3.1.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/78/787bf9b6d56f63cc3d0cf0f7f17affeb85b6496b32bf9a200f57431c886ae4a5?__gda__=exp=1559200628~hmac=2d
+######################################################################## 100.0%
+==> Pouring opus-1.3.1.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/opus/1.3.1: 17 files, 982.3KB
+==> Installing opencv dependency: rtmpdump
+==> Downloading https://homebrew.bintray.com/bottles/rtmpdump-2.4+20151223.mojave.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring rtmpdump-2.4+20151223.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/rtmpdump/2.4+20151223: 20 files, 418.5KB
+==> Installing opencv dependency: flac
+==> Downloading https://homebrew.bintray.com/bottles/flac-1.3.2_1.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/e3/e3972de751c58d0b835ef606f5d21c4ef22bbac927b17f75440259fb2da06bd6?__gda__=exp=1559200635~hmac=43
+######################################################################## 100.0%
+==> Pouring flac-1.3.2_1.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/flac/1.3.2_1: 53 files, 1.8MB
+==> Installing opencv dependency: libsndfile
+==> Downloading https://homebrew.bintray.com/bottles/libsndfile-1.0.28.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/e7/e7cb1a29d931a1637ec84a5ba6b71d37801dc0bb4eab38051df19755cb048667?__gda__=exp=1559200638~hmac=06
+######################################################################## 100.0%
+==> Pouring libsndfile-1.0.28.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/libsndfile/1.0.28: 48 files, 1.8MB
+==> Installing opencv dependency: libsamplerate
+==> Downloading https://homebrew.bintray.com/bottles/libsamplerate-0.1.9_1.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/42/4230f5c4bc95c882164799c28d1e8e0fd58e24649aacd585a8d9fa03e7b54395?__gda__=exp=1559200640~hmac=ba
+######################################################################## 100.0%
+==> Pouring libsamplerate-0.1.9_1.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/libsamplerate/0.1.9_1: 28 files, 3.0MB
+==> Installing opencv dependency: rubberband
+==> Downloading https://homebrew.bintray.com/bottles/rubberband-1.8.2_1.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/e1/e100d79a7c55a6ba5642d0ce9e005971bdab26e8b7a0cdec011e21db19ccd767?__gda__=exp=1559200644~hmac=39
+######################################################################## 100.0%
+==> Pouring rubberband-1.8.2_1.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/rubberband/1.8.2_1: 12 files, 634.0KB
+==> Installing opencv dependency: sdl2
+==> Downloading https://homebrew.bintray.com/bottles/sdl2-2.0.9_1.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/73/73dc083fe09bef54cdd08d6e1d86fba67172bc7bda4886e410d3e72fe5ab1c32?__gda__=exp=1559200646~hmac=dd
+######################################################################## 100.0%
+==> Pouring sdl2-2.0.9_1.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/sdl2/2.0.9_1: 87 files, 4.5MB
+==> Installing opencv dependency: snappy
+==> Downloading https://homebrew.bintray.com/bottles/snappy-1.1.7_1.mojave.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring snappy-1.1.7_1.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/snappy/1.1.7_1: 18 files, 115.8KB
+==> Installing opencv dependency: speex
+==> Downloading https://homebrew.bintray.com/bottles/speex-1.2.0.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/ed/ed212ec09c4a1a2c789e5c2a7a2679b56c75bcf252a52fe28d6615499d21534f?__gda__=exp=1559200652~hmac=ae
+######################################################################## 100.0%
+==> Pouring speex-1.2.0.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/speex/1.2.0: 21 files, 689.5KB
+==> Installing opencv dependency: giflib
+==> Downloading https://homebrew.bintray.com/bottles/giflib-5.1.4_1.mojave.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring giflib-5.1.4_1.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/giflib/5.1.4_1: 21 files, 312.6KB
+==> Installing opencv dependency: leptonica
+==> Downloading https://homebrew.bintray.com/bottles/leptonica-1.78.0.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/53/534b5e4c96c34aed7f2e3dd9ffc046fd49a9a015a1ed0c2f1859d2cc182ed66e?__gda__=exp=1559200660~hmac=94
+######################################################################## 100.0%
+==> Pouring leptonica-1.78.0.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/leptonica/1.78.0: 49 files, 5.9MB
+==> Installing opencv dependency: tesseract
+==> Downloading https://homebrew.bintray.com/bottles/tesseract-4.0.0_1.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/46/46867f03eddad20bbcc7d17580d48ab718c3658291a1e51b928c6b0c2a55100f?__gda__=exp=1559200663~hmac=23
+######################################################################## 100.0%
+==> Pouring tesseract-4.0.0_1.mojave.bottle.tar.gz
+==> Caveats
+This formula contains only the "eng", "osd", and "snum" language data files.
+If you need all the other supported languages, `brew install tesseract-lang`.
+==> Summary
+🍺  /usr/local/Cellar/tesseract/4.0.0_1: 63 files, 30.0MB
+==> Installing opencv dependency: theora
+==> Downloading https://homebrew.bintray.com/bottles/theora-1.1.1.mojave.bottle.2.tar.gz
+==> Downloading from https://akamai.bintray.com/04/0423b3f4858072285691307877ef1899e62e67b67fad2f871e7937d7db572836?__gda__=exp=1559200671~hmac=84
+######################################################################## 100.0%
+==> Pouring theora-1.1.1.mojave.bottle.2.tar.gz
+🍺  /usr/local/Cellar/theora/1.1.1: 97 files, 2MB
+==> Installing opencv dependency: x264
+==> Downloading https://homebrew.bintray.com/bottles/x264-r2917.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/47/474593a6930921e1668ff97daaa211d6b0da6c48a08f928496d76b45542afafe?__gda__=exp=1559200677~hmac=75
+######################################################################## 100.0%
+==> Pouring x264-r2917.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/x264/r2917: 11 files, 5.9MB
+==> Installing opencv dependency: xvid
+==> Downloading https://homebrew.bintray.com/bottles/xvid-1.3.5.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/c1/c1c30c17a4715958fa2fa27fb060b2835c02818b46342d6534131af8729ebd65?__gda__=exp=1559200680~hmac=ee
+######################################################################## 100.0%
+==> Pouring xvid-1.3.5.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/xvid/1.3.5: 10 files, 1.2MB
+==> Installing opencv dependency: ffmpeg
+==> Downloading https://homebrew.bintray.com/bottles/ffmpeg-4.1.3_1.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/dd/ddfb58dd5432eed657d9ecda3b4c2f06eb523815e9e7f339b1f05d1048f89d40?__gda__=exp=1559200683~hmac=50
+######################################################################## 100.0%
+==> Pouring ffmpeg-4.1.3_1.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/ffmpeg/4.1.3_1: 282 files, 58.5MB
+==> Installing opencv dependency: gflags
+==> Downloading https://homebrew.bintray.com/bottles/gflags-2.2.2.mojave.bottle.1.tar.gz
+######################################################################## 100.0%
+==> Pouring gflags-2.2.2.mojave.bottle.1.tar.gz
+🍺  /usr/local/Cellar/gflags/2.2.2: 24 files, 330.2KB
+==> Installing opencv dependency: glog
+==> Downloading https://homebrew.bintray.com/bottles/glog-0.4.0.mojave.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring glog-0.4.0.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/glog/0.4.0: 19 files, 227.8KB
+==> Installing opencv dependency: isl
+==> Downloading https://homebrew.bintray.com/bottles/isl-0.21.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/f9/f9188b5d486b2a835cd865f219be1a9848ce3926e27089a1538ee989db65447d?__gda__=exp=1559200703~hmac=75
+######################################################################## 100.0%
+==> Pouring isl-0.21.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/isl/0.21: 72 files, 4.3MB
+==> Installing opencv dependency: mpfr
+==> Downloading https://homebrew.bintray.com/bottles/mpfr-4.0.2.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/cf/cfce7ab866e98360c9364cd924da620ae7936d3a224d686aacc209c2107d19aa?__gda__=exp=1559200706~hmac=9a
+######################################################################## 100.0%
+==> Pouring mpfr-4.0.2.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/mpfr/4.0.2: 28 files, 4.7MB
+==> Installing opencv dependency: libmpc
+==> Downloading https://homebrew.bintray.com/bottles/libmpc-1.1.0.mojave.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring libmpc-1.1.0.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/libmpc/1.1.0: 12 files, 354KB
+==> Installing opencv dependency: gcc
+==> Downloading https://homebrew.bintray.com/bottles/gcc-9.1.0.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/1a/1af51e1a8c5394297c13b85548203a84279a2e24e6ab982fb299c526bdde3079?__gda__=exp=1559200714~hmac=e9
+######################################################################## 100.0%
+==> Pouring gcc-9.1.0.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/gcc/9.1.0: 1,461 files, 287MB
+==> Installing opencv dependency: openblas
+==> Downloading https://homebrew.bintray.com/bottles/openblas-0.3.6_1.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/ce/ce1788eedcf1776fcad04ae78cb81e7141e7db07762dafb44118c9cfb7748de0?__gda__=exp=1559200760~hmac=5e
+######################################################################## 100.0%
+==> Pouring openblas-0.3.6_1.mojave.bottle.tar.gz
+==> Caveats
+openblas is keg-only, which means it was not symlinked into /usr/local,
+because macOS provides BLAS and LAPACK in the Accelerate framework.
+
+For compilers to find openblas you may need to set:
+  export LDFLAGS="-L/usr/local/opt/openblas/lib"
+  export CPPFLAGS="-I/usr/local/opt/openblas/include"
+
+==> Summary
+🍺  /usr/local/Cellar/openblas/0.3.6_1: 21 files, 120MB
+==> Installing opencv dependency: python@2
+==> Downloading https://homebrew.bintray.com/bottles/python@2-2.7.16.mojave.bottle.1.tar.gz
+==> Downloading from https://akamai.bintray.com/cb/cb90a15faf89116993fd85c330069965aefe2d5c6b189a594868d03a34c94aaa?__gda__=exp=1559200774~hmac=33
+######################################################################## 100.0%
+==> Pouring python@2-2.7.16.mojave.bottle.1.tar.gz
+==> /usr/local/Cellar/python@2/2.7.16/bin/python -s setup.py --no-user-cfg install --force --verbose --single-version-externally-managed --record=
+==> /usr/local/Cellar/python@2/2.7.16/bin/python -s setup.py --no-user-cfg install --force --verbose --single-version-externally-managed --record=
+==> /usr/local/Cellar/python@2/2.7.16/bin/python -s setup.py --no-user-cfg install --force --verbose --single-version-externally-managed --record=
+==> Caveats
+Pip and setuptools have been installed. To update them
+  pip install --upgrade pip setuptools
+
+You can install Python packages with
+  pip install <package>
+
+They will install into the site-package directory
+  /usr/local/lib/python2.7/site-packages
+
+See: https://docs.brew.sh/Homebrew-and-Python
+==> Summary
+🍺  /usr/local/Cellar/python@2/2.7.16: 3,706 files, 50.6MB
+==> Installing opencv dependency: numpy
+==> Downloading https://homebrew.bintray.com/bottles/numpy-1.16.4.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/9f/9f2a8c3995cf8006fead37307be70846d54fe0df3c6a45ee7362ca59c8976076?__gda__=exp=1559200790~hmac=d1
+######################################################################## 100.0%
+==> Pouring numpy-1.16.4.mojave.bottle.tar.gz
+Error: The `brew link` step did not complete successfully
+The formula built, but is not symlinked into /usr/local
+Could not symlink bin/f2py
+Target /usr/local/bin/f2py
+already exists. You may want to remove it:
+  rm '/usr/local/bin/f2py'
+
+To force the link and overwrite all conflicting files:
+  brew link --overwrite numpy
+
+To list all files that would be deleted:
+  brew link --overwrite --dry-run numpy
+
+Possible conflicting files are:
+/usr/local/bin/f2py
+/usr/local/bin/f2py3
+/usr/local/bin/f2py3.7
+/usr/local/lib/python3.7/site-packages/numpy/LICENSE.txt
+/usr/local/lib/python3.7/site-packages/numpy/__config__.py
+/usr/local/lib/python3.7/site-packages/numpy/__init__.py
+/usr/local/lib/python3.7/site-packages/numpy/_distributor_init.py
+/usr/local/lib/python3.7/site-packages/numpy/_globals.py
+/usr/local/lib/python3.7/site-packages/numpy/_pytesttester.py
+/usr/local/lib/python3.7/site-packages/numpy/compat/__init__.py
+/usr/local/lib/python3.7/site-packages/numpy/compat/_inspect.py
+/usr/local/lib/python3.7/site-packages/numpy/compat/py3k.py
+/usr/local/lib/python3.7/site-packages/numpy/compat/setup.py
+/usr/local/lib/python3.7/site-packages/numpy/compat/tests/__init__.py
+/usr/local/lib/python3.7/site-packages/numpy/compat/tests/test_compat.py
+/usr/local/lib/python3.7/site-packages/numpy/conftest.py
+/usr/local/lib/python3.7/site-packages/numpy/core/__init__.py
+/usr/local/lib/python3.7/site-packages/numpy/core/_add_newdocs.py
+/usr/local/lib/python3.7/site-packages/numpy/core/_aliased_types.py
+/usr/local/lib/python3.7/site-packages/numpy/core/_dtype.py
+/usr/local/lib/python3.7/site-packages/numpy/core/_dtype_ctypes.py
+/usr/local/lib/python3.7/site-packages/numpy/core/_dummy.cpython-37m-darwin.so
+/usr/local/lib/python3.7/site-packages/numpy/core/_internal.py
+/usr/local/lib/python3.7/site-packages/numpy/core/_methods.py
+/usr/local/lib/python3.7/site-packages/numpy/core/_multiarray_tests.cpython-37m-darwin.so
+/usr/local/lib/python3.7/site-packages/numpy/core/_multiarray_umath.cpython-37m-darwin.so
+/usr/local/lib/python3.7/site-packages/numpy/core/_operand_flag_tests.cpython-37m-darwin.so
+/usr/local/lib/python3.7/site-packages/numpy/core/_rational_tests.cpython-37m-darwin.so
+/usr/local/lib/python3.7/site-packages/numpy/core/_string_helpers.py
+/usr/local/lib/python3.7/site-packages/numpy/core/_struct_ufunc_tests.cpython-37m-darwin.so
+/usr/local/lib/python3.7/site-packages/numpy/core/_type_aliases.py
+/usr/local/lib/python3.7/site-packages/numpy/core/_umath_tests.cpython-37m-darwin.so
+/usr/local/lib/python3.7/site-packages/numpy/core/arrayprint.py
+/usr/local/lib/python3.7/site-packages/numpy/core/cversions.py
+/usr/local/lib/python3.7/site-packages/numpy/core/defchararray.py
+/usr/local/lib/python3.7/site-packages/numpy/core/einsumfunc.py
+/usr/local/lib/python3.7/site-packages/numpy/core/fromnumeric.py
+/usr/local/lib/python3.7/site-packages/numpy/core/function_base.py
+/usr/local/lib/python3.7/site-packages/numpy/core/generate_numpy_api.py
+/usr/local/lib/python3.7/site-packages/numpy/core/getlimits.py
+/usr/local/lib/python3.7/site-packages/numpy/core/include/numpy/__multiarray_api.h
+/usr/local/lib/python3.7/site-packages/numpy/core/include/numpy/__ufunc_api.h
+/usr/local/lib/python3.7/site-packages/numpy/core/include/numpy/_neighborhood_iterator_imp.h
+/usr/local/lib/python3.7/site-packages/numpy/core/include/numpy/_numpyconfig.h
+/usr/local/lib/python3.7/site-packages/numpy/core/include/numpy/arrayobject.h
+/usr/local/lib/python3.7/site-packages/numpy/core/include/numpy/arrayscalars.h
+/usr/local/lib/python3.7/site-packages/numpy/core/include/numpy/halffloat.h
+/usr/local/lib/python3.7/site-packages/numpy/core/include/numpy/multiarray_api.txt
+/usr/local/lib/python3.7/site-packages/numpy/core/include/numpy/ndarrayobject.h
+/usr/local/lib/python3.7/site-packages/numpy/core/include/numpy/ndarraytypes.h
+/usr/local/lib/python3.7/site-packages/numpy/core/include/numpy/noprefix.h
+/usr/local/lib/python3.7/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h
+/usr/local/lib/python3.7/site-packages/numpy/core/include/numpy/npy_3kcompat.h
+/usr/local/lib/python3.7/site-packages/numpy/core/include/numpy/npy_common.h
+/usr/local/lib/python3.7/site-packages/numpy/core/include/numpy/npy_cpu.h
+/usr/local/lib/python3.7/site-packages/numpy/core/include/numpy/npy_endian.h
+/usr/local/lib/python3.7/site-packages/numpy/core/include/numpy/npy_interrupt.h
+/usr/local/lib/python3.7/site-packages/numpy/core/include/numpy/npy_math.h
+/usr/local/lib/python3.7/site-packages/numpy/core/include/numpy/npy_no_deprecated_api.h
+/usr/local/lib/python3.7/site-packages/numpy/core/include/numpy/npy_os.h
+/usr/local/lib/python3.7/site-packages/numpy/core/include/numpy/numpyconfig.h
+/usr/local/lib/python3.7/site-packages/numpy/core/include/numpy/old_defines.h
+/usr/local/lib/python3.7/site-packages/numpy/core/include/numpy/oldnumeric.h
+/usr/local/lib/python3.7/site-packages/numpy/core/include/numpy/ufunc_api.txt
+/usr/local/lib/python3.7/site-packages/numpy/core/include/numpy/ufuncobject.h
+/usr/local/lib/python3.7/site-packages/numpy/core/include/numpy/utils.h
+/usr/local/lib/python3.7/site-packages/numpy/core/info.py
+/usr/local/lib/python3.7/site-packages/numpy/core/lib/libnpymath.a
+/usr/local/lib/python3.7/site-packages/numpy/core/lib/npy-pkg-config/mlib.ini
+/usr/local/lib/python3.7/site-packages/numpy/core/lib/npy-pkg-config/npymath.ini
+/usr/local/lib/python3.7/site-packages/numpy/core/machar.py
+/usr/local/lib/python3.7/site-packages/numpy/core/memmap.py
+/usr/local/lib/python3.7/site-packages/numpy/core/multiarray.py
+/usr/local/lib/python3.7/site-packages/numpy/core/numeric.py
+/usr/local/lib/python3.7/site-packages/numpy/core/numerictypes.py
+/usr/local/lib/python3.7/site-packages/numpy/core/overrides.py
+/usr/local/lib/python3.7/site-packages/numpy/core/records.py
+/usr/local/lib/python3.7/site-packages/numpy/core/setup.py
+/usr/local/lib/python3.7/site-packages/numpy/core/setup_common.py
+/usr/local/lib/python3.7/site-packages/numpy/core/shape_base.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/__init__.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/_locales.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/data/astype_copy.pkl
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/data/recarray_from_file.fits
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_abc.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_api.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_arrayprint.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_datetime.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_defchararray.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_deprecations.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_dtype.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_einsum.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_errstate.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_extint128.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_function_base.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_getlimits.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_half.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_indexerrors.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_indexing.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_item_selection.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_longdouble.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_machar.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_mem_overlap.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_memmap.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_multiarray.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_nditer.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_numeric.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_numerictypes.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_overrides.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_print.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_records.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_regression.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_scalar_ctors.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_scalarbuffer.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_scalarinherit.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_scalarmath.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_scalarprint.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_shape_base.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_ufunc.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_umath.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_umath_complex.py
+/usr/local/lib/python3.7/site-packages/numpy/core/tests/test_unicode.py
+/usr/local/lib/python3.7/site-packages/numpy/core/umath.py
+/usr/local/lib/python3.7/site-packages/numpy/core/umath_tests.py
+/usr/local/lib/python3.7/site-packages/numpy/ctypeslib.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/__config__.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/__init__.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/__version__.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/_shell_utils.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/ccompiler.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/command/__init__.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/command/autodist.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/command/bdist_rpm.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/command/build.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/command/build_clib.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/command/build_ext.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/command/build_py.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/command/build_scripts.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/command/build_src.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/command/config.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/command/config_compiler.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/command/develop.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/command/egg_info.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/command/install.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/command/install_clib.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/command/install_data.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/command/install_headers.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/command/sdist.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/compat.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/conv_template.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/core.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/cpuinfo.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/exec_command.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/extension.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/fcompiler/__init__.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/fcompiler/absoft.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/fcompiler/compaq.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/fcompiler/environment.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/fcompiler/g95.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/fcompiler/gnu.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/fcompiler/hpux.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/fcompiler/ibm.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/fcompiler/intel.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/fcompiler/lahey.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/fcompiler/mips.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/fcompiler/nag.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/fcompiler/none.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/fcompiler/pathf95.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/fcompiler/pg.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/fcompiler/sun.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/fcompiler/vast.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/from_template.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/info.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/intelccompiler.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/lib2def.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/line_endings.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/log.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/mingw/gfortran_vs2003_hack.c
+/usr/local/lib/python3.7/site-packages/numpy/distutils/mingw32ccompiler.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/misc_util.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/msvc9compiler.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/msvccompiler.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/npy_pkg_config.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/numpy_distribution.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/pathccompiler.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/setup.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/system_info.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/tests/__init__.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/tests/test_exec_command.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/tests/test_fcompiler.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/tests/test_fcompiler_gnu.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/tests/test_fcompiler_intel.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/tests/test_fcompiler_nagfor.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/tests/test_from_template.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/tests/test_misc_util.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/tests/test_npy_pkg_config.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/tests/test_shell_utils.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/tests/test_system_info.py
+/usr/local/lib/python3.7/site-packages/numpy/distutils/unixccompiler.py
+/usr/local/lib/python3.7/site-packages/numpy/doc/__init__.py
+/usr/local/lib/python3.7/site-packages/numpy/doc/basics.py
+/usr/local/lib/python3.7/site-packages/numpy/doc/broadcasting.py
+/usr/local/lib/python3.7/site-packages/numpy/doc/byteswapping.py
+/usr/local/lib/python3.7/site-packages/numpy/doc/constants.py
+/usr/local/lib/python3.7/site-packages/numpy/doc/creation.py
+/usr/local/lib/python3.7/site-packages/numpy/doc/glossary.py
+/usr/local/lib/python3.7/site-packages/numpy/doc/indexing.py
+/usr/local/lib/python3.7/site-packages/numpy/doc/internals.py
+/usr/local/lib/python3.7/site-packages/numpy/doc/misc.py
+/usr/local/lib/python3.7/site-packages/numpy/doc/structured_arrays.py
+/usr/local/lib/python3.7/site-packages/numpy/doc/subclassing.py
+/usr/local/lib/python3.7/site-packages/numpy/doc/ufuncs.py
+/usr/local/lib/python3.7/site-packages/numpy/dual.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/__init__.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/__main__.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/__version__.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/auxfuncs.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/capi_maps.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/cb_rules.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/cfuncs.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/common_rules.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/crackfortran.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/diagnose.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/f2py2e.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/f2py_testing.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/f90mod_rules.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/func2subr.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/info.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/rules.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/setup.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/src/fortranobject.c
+/usr/local/lib/python3.7/site-packages/numpy/f2py/src/fortranobject.h
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/__init__.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/src/array_from_pyobj/wrapmodule.c
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/src/assumed_shape/.f2py_f2cmap
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/src/assumed_shape/foo_free.f90
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/src/assumed_shape/foo_mod.f90
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/src/assumed_shape/foo_use.f90
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/src/assumed_shape/precision.f90
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/src/common/block.f
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/src/kind/foo.f90
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/src/mixed/foo.f
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/src/mixed/foo_fixed.f90
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/src/mixed/foo_free.f90
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/src/parameter/constant_both.f90
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/src/parameter/constant_compound.f90
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/src/parameter/constant_integer.f90
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/src/parameter/constant_non_compound.f90
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/src/parameter/constant_real.f90
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/src/regression/inout.f90
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/src/size/foo.f90
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/src/string/char.f90
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/test_array_from_pyobj.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/test_assumed_shape.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/test_block_docstring.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/test_callback.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/test_common.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/test_compile_function.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/test_kind.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/test_mixed.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/test_parameter.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/test_quoted_character.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/test_regression.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/test_return_character.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/test_return_complex.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/test_return_integer.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/test_return_logical.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/test_return_real.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/test_semicolon_split.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/test_size.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/test_string.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/tests/util.py
+/usr/local/lib/python3.7/site-packages/numpy/f2py/use_rules.py
+/usr/local/lib/python3.7/site-packages/numpy/fft/__init__.py
+/usr/local/lib/python3.7/site-packages/numpy/fft/fftpack.py
+/usr/local/lib/python3.7/site-packages/numpy/fft/fftpack_lite.cpython-37m-darwin.so
+/usr/local/lib/python3.7/site-packages/numpy/fft/helper.py
+/usr/local/lib/python3.7/site-packages/numpy/fft/info.py
+/usr/local/lib/python3.7/site-packages/numpy/fft/setup.py
+/usr/local/lib/python3.7/site-packages/numpy/fft/tests/__init__.py
+/usr/local/lib/python3.7/site-packages/numpy/fft/tests/test_fftpack.py
+/usr/local/lib/python3.7/site-packages/numpy/fft/tests/test_helper.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/__init__.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/_datasource.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/_iotools.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/_version.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/arraypad.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/arraysetops.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/arrayterator.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/financial.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/format.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/function_base.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/histograms.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/index_tricks.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/info.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/mixins.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/nanfunctions.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/npyio.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/polynomial.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/recfunctions.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/scimath.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/setup.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/shape_base.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/stride_tricks.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/tests/__init__.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/tests/data/py2-objarr.npy
+/usr/local/lib/python3.7/site-packages/numpy/lib/tests/data/py2-objarr.npz
+/usr/local/lib/python3.7/site-packages/numpy/lib/tests/data/py3-objarr.npy
+/usr/local/lib/python3.7/site-packages/numpy/lib/tests/data/py3-objarr.npz
+/usr/local/lib/python3.7/site-packages/numpy/lib/tests/data/python3.npy
+/usr/local/lib/python3.7/site-packages/numpy/lib/tests/data/win64python2.npy
+/usr/local/lib/python3.7/site-packages/numpy/lib/tests/test__datasource.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/tests/test__iotools.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/tests/test__version.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/tests/test_arraypad.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/tests/test_arraysetops.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/tests/test_arrayterator.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/tests/test_financial.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/tests/test_format.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/tests/test_function_base.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/tests/test_histograms.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/tests/test_index_tricks.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/tests/test_io.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/tests/test_mixins.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/tests/test_nanfunctions.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/tests/test_packbits.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/tests/test_polynomial.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/tests/test_recfunctions.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/tests/test_regression.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/tests/test_shape_base.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/tests/test_stride_tricks.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/tests/test_twodim_base.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/tests/test_type_check.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/tests/test_ufunclike.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/tests/test_utils.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/twodim_base.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/type_check.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/ufunclike.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/user_array.py
+/usr/local/lib/python3.7/site-packages/numpy/lib/utils.py
+/usr/local/lib/python3.7/site-packages/numpy/linalg/__init__.py
+/usr/local/lib/python3.7/site-packages/numpy/linalg/_umath_linalg.cpython-37m-darwin.so
+/usr/local/lib/python3.7/site-packages/numpy/linalg/info.py
+/usr/local/lib/python3.7/site-packages/numpy/linalg/lapack_lite.cpython-37m-darwin.so
+/usr/local/lib/python3.7/site-packages/numpy/linalg/linalg.py
+/usr/local/lib/python3.7/site-packages/numpy/linalg/setup.py
+/usr/local/lib/python3.7/site-packages/numpy/linalg/tests/__init__.py
+/usr/local/lib/python3.7/site-packages/numpy/linalg/tests/test_build.py
+/usr/local/lib/python3.7/site-packages/numpy/linalg/tests/test_deprecations.py
+/usr/local/lib/python3.7/site-packages/numpy/linalg/tests/test_linalg.py
+/usr/local/lib/python3.7/site-packages/numpy/linalg/tests/test_regression.py
+/usr/local/lib/python3.7/site-packages/numpy/ma/__init__.py
+/usr/local/lib/python3.7/site-packages/numpy/ma/bench.py
+/usr/local/lib/python3.7/site-packages/numpy/ma/core.py
+/usr/local/lib/python3.7/site-packages/numpy/ma/extras.py
+/usr/local/lib/python3.7/site-packages/numpy/ma/mrecords.py
+/usr/local/lib/python3.7/site-packages/numpy/ma/setup.py
+/usr/local/lib/python3.7/site-packages/numpy/ma/tests/__init__.py
+/usr/local/lib/python3.7/site-packages/numpy/ma/tests/test_core.py
+/usr/local/lib/python3.7/site-packages/numpy/ma/tests/test_deprecations.py
+/usr/local/lib/python3.7/site-packages/numpy/ma/tests/test_extras.py
+/usr/local/lib/python3.7/site-packages/numpy/ma/tests/test_mrecords.py
+/usr/local/lib/python3.7/site-packages/numpy/ma/tests/test_old_ma.py
+/usr/local/lib/python3.7/site-packages/numpy/ma/tests/test_regression.py
+/usr/local/lib/python3.7/site-packages/numpy/ma/tests/test_subclassing.py
+/usr/local/lib/python3.7/site-packages/numpy/ma/testutils.py
+/usr/local/lib/python3.7/site-packages/numpy/ma/timer_comparison.py
+/usr/local/lib/python3.7/site-packages/numpy/ma/version.py
+/usr/local/lib/python3.7/site-packages/numpy/matlib.py
+/usr/local/lib/python3.7/site-packages/numpy/matrixlib/__init__.py
+/usr/local/lib/python3.7/site-packages/numpy/matrixlib/defmatrix.py
+/usr/local/lib/python3.7/site-packages/numpy/matrixlib/setup.py
+/usr/local/lib/python3.7/site-packages/numpy/matrixlib/tests/__init__.py
+/usr/local/lib/python3.7/site-packages/numpy/matrixlib/tests/test_defmatrix.py
+/usr/local/lib/python3.7/site-packages/numpy/matrixlib/tests/test_interaction.py
+/usr/local/lib/python3.7/site-packages/numpy/matrixlib/tests/test_masked_matrix.py
+/usr/local/lib/python3.7/site-packages/numpy/matrixlib/tests/test_matrix_linalg.py
+/usr/local/lib/python3.7/site-packages/numpy/matrixlib/tests/test_multiarray.py
+/usr/local/lib/python3.7/site-packages/numpy/matrixlib/tests/test_numeric.py
+/usr/local/lib/python3.7/site-packages/numpy/matrixlib/tests/test_regression.py
+/usr/local/lib/python3.7/site-packages/numpy/polynomial/__init__.py
+/usr/local/lib/python3.7/site-packages/numpy/polynomial/_polybase.py
+/usr/local/lib/python3.7/site-packages/numpy/polynomial/chebyshev.py
+/usr/local/lib/python3.7/site-packages/numpy/polynomial/hermite.py
+/usr/local/lib/python3.7/site-packages/numpy/polynomial/hermite_e.py
+/usr/local/lib/python3.7/site-packages/numpy/polynomial/laguerre.py
+/usr/local/lib/python3.7/site-packages/numpy/polynomial/legendre.py
+/usr/local/lib/python3.7/site-packages/numpy/polynomial/polynomial.py
+/usr/local/lib/python3.7/site-packages/numpy/polynomial/polyutils.py
+/usr/local/lib/python3.7/site-packages/numpy/polynomial/setup.py
+/usr/local/lib/python3.7/site-packages/numpy/polynomial/tests/__init__.py
+/usr/local/lib/python3.7/site-packages/numpy/polynomial/tests/test_chebyshev.py
+/usr/local/lib/python3.7/site-packages/numpy/polynomial/tests/test_classes.py
+/usr/local/lib/python3.7/site-packages/numpy/polynomial/tests/test_hermite.py
+/usr/local/lib/python3.7/site-packages/numpy/polynomial/tests/test_hermite_e.py
+/usr/local/lib/python3.7/site-packages/numpy/polynomial/tests/test_laguerre.py
+/usr/local/lib/python3.7/site-packages/numpy/polynomial/tests/test_legendre.py
+/usr/local/lib/python3.7/site-packages/numpy/polynomial/tests/test_polynomial.py
+/usr/local/lib/python3.7/site-packages/numpy/polynomial/tests/test_polyutils.py
+/usr/local/lib/python3.7/site-packages/numpy/polynomial/tests/test_printing.py
+/usr/local/lib/python3.7/site-packages/numpy/random/__init__.py
+/usr/local/lib/python3.7/site-packages/numpy/random/info.py
+/usr/local/lib/python3.7/site-packages/numpy/random/mtrand.cpython-37m-darwin.so
+/usr/local/lib/python3.7/site-packages/numpy/random/randomkit.h
+/usr/local/lib/python3.7/site-packages/numpy/random/setup.py
+/usr/local/lib/python3.7/site-packages/numpy/random/tests/__init__.py
+/usr/local/lib/python3.7/site-packages/numpy/random/tests/test_random.py
+/usr/local/lib/python3.7/site-packages/numpy/random/tests/test_regression.py
+/usr/local/lib/python3.7/site-packages/numpy/setup.py
+/usr/local/lib/python3.7/site-packages/numpy/testing/__init__.py
+/usr/local/lib/python3.7/site-packages/numpy/testing/_private/__init__.py
+/usr/local/lib/python3.7/site-packages/numpy/testing/_private/decorators.py
+/usr/local/lib/python3.7/site-packages/numpy/testing/_private/noseclasses.py
+/usr/local/lib/python3.7/site-packages/numpy/testing/_private/nosetester.py
+/usr/local/lib/python3.7/site-packages/numpy/testing/_private/parameterized.py
+/usr/local/lib/python3.7/site-packages/numpy/testing/_private/utils.py
+/usr/local/lib/python3.7/site-packages/numpy/testing/decorators.py
+/usr/local/lib/python3.7/site-packages/numpy/testing/noseclasses.py
+/usr/local/lib/python3.7/site-packages/numpy/testing/nosetester.py
+/usr/local/lib/python3.7/site-packages/numpy/testing/print_coercion_tables.py
+/usr/local/lib/python3.7/site-packages/numpy/testing/setup.py
+/usr/local/lib/python3.7/site-packages/numpy/testing/tests/__init__.py
+/usr/local/lib/python3.7/site-packages/numpy/testing/tests/test_decorators.py
+/usr/local/lib/python3.7/site-packages/numpy/testing/tests/test_doctesting.py
+/usr/local/lib/python3.7/site-packages/numpy/testing/tests/test_utils.py
+/usr/local/lib/python3.7/site-packages/numpy/testing/utils.py
+/usr/local/lib/python3.7/site-packages/numpy/tests/__init__.py
+/usr/local/lib/python3.7/site-packages/numpy/tests/test_ctypeslib.py
+/usr/local/lib/python3.7/site-packages/numpy/tests/test_matlib.py
+/usr/local/lib/python3.7/site-packages/numpy/tests/test_numpy_version.py
+/usr/local/lib/python3.7/site-packages/numpy/tests/test_public_api.py
+/usr/local/lib/python3.7/site-packages/numpy/tests/test_reloading.py
+/usr/local/lib/python3.7/site-packages/numpy/tests/test_scripts.py
+/usr/local/lib/python3.7/site-packages/numpy/tests/test_warnings.py
+/usr/local/lib/python3.7/site-packages/numpy/version.py
+==> Caveats
+If you use system python (that comes - depending on the OS X version -
+with older versions of numpy, scipy and matplotlib), you may need to
+ensure that the brewed packages come earlier in Python's sys.path with:
+  mkdir -p /Users/nakazawa/Library/Python/2.7/lib/python/site-packages
+  echo 'import sys; sys.path.insert(1, "/usr/local/lib/python3.7/site-packages")' >> /Users/nakazawa/Library/Python/2.7/lib/python/site-packages/homebrew.pth
+==> Summary
+🍺  /usr/local/Cellar/numpy/1.16.4: 1,000 files, 26.2MB
+==> Installing opencv dependency: ilmbase
+==> Downloading https://homebrew.bintray.com/bottles/ilmbase-2.3.0.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/43/436dbe30d0bc520c5c056dac23a3558dd2595e5f5b68c6c17e18566716c71e56?__gda__=exp=1559200797~hmac=4b
+######################################################################## 100.0%
+==> Pouring ilmbase-2.3.0.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/ilmbase/2.3.0: 344 files, 5.6MB
+==> Installing opencv dependency: openexr
+==> Downloading https://homebrew.bintray.com/bottles/openexr-2.3.0.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/11/111658d105dc894ea67e1fdc98597c73c1bf1fa64ac52f1287372ded53a1cdab?__gda__=exp=1559200800~hmac=10
+######################################################################## 100.0%
+==> Pouring openexr-2.3.0.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/openexr/2.3.0: 132 files, 10.7MB
+==> Installing opencv dependency: tbb
+==> Downloading https://homebrew.bintray.com/bottles/tbb-2019_U6.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/4b/4bfdb3fba0523b5eeec1df616bcb441e91893655bfcadfe241dbdb2da8e8450c?__gda__=exp=1559200806~hmac=1a
+######################################################################## 100.0%
+==> Pouring tbb-2019_U6.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/tbb/2019_U6: 134 files, 2.7MB
+==> Installing opencv
+==> Downloading https://homebrew.bintray.com/bottles/opencv-4.1.0_2.mojave.bottle.tar.gz
+==> Downloading from https://akamai.bintray.com/3b/3be6de71c28077e5279ffb0104729b0cef1267f81908e6ea0fb404fb81d913e6?__gda__=exp=1559200808~hmac=25
+######################################################################## 100.0%
+==> Pouring opencv-4.1.0_2.mojave.bottle.tar.gz
+Warning: opencv dependency gcc was built with a different C++ standard
+library (libstdc++ from clang). This may cause problems at runtime.
+🍺  /usr/local/Cellar/opencv/4.1.0_2: 727 files, 237.5MB
+==> `brew cleanup` has not been run in 30 days, running now...
+Removing: /Users/nakazawa/Library/Caches/Homebrew/clinfo--2.2.18.04.06.mojave.bottle.tar.gz... (37.7KB)
+Removing: /usr/local/Cellar/freetype/2.9.1... (60 files, 2.6MB)
+Removing: /usr/local/Cellar/glib/2.58.3... (435 files, 18.5MB)
+Removing: /usr/local/Cellar/ilmbase/2.2.1... (353 files, 5.6MB)
+Removing: /Users/nakazawa/Library/Caches/Homebrew/libidn2--2.1.1a.mojave.bottle.tar.gz... (222KB)
+Removing: /Users/nakazawa/Library/Caches/Homebrew/libomp--7.0.0.mojave.bottle.tar.gz... (420.6KB)
+Removing: /usr/local/Cellar/libpng/1.6.36... (27 files, 1.2MB)
+Removing: /Users/nakazawa/Library/Caches/Homebrew/node--11.14.0_1.mojave.bottle.tar.gz... (13.9MB)
+Removing: /usr/local/Cellar/openexr/2.2.0_1... (132 files, 11.0MB)
+Removing: /usr/local/Cellar/openjpeg/2.3.0... (516 files, 12.8MB)
+Removing: /usr/local/Cellar/openssl/1.0.2q... (1,794 files, 12.1MB)
+Removing: /usr/local/Cellar/pcre/8.42... (204 files, 5.5MB)
+Removing: /usr/local/Cellar/python/3.7.1... (3,897 files, 60.8MB)
+Removing: /usr/local/Cellar/readline/7.0.5... (46 files, 1.5MB)
+Removing: /usr/local/Cellar/sqlite/3.26.0... (11 files, 3.7MB)
+Removing: /Users/nakazawa/Library/Caches/Homebrew/webp--1.0.2.mojave.bottle.tar.gz... (851.4KB)
+Removing: /Users/nakazawa/Library/Logs/Homebrew/icu4c... (64B)
+Removing: /Users/nakazawa/Library/Logs/Homebrew/node... (64B)
+Pruned 0 symbolic links and 55 directories from /usr/local
+==> Caveats
+==> unbound
+To have launchd start unbound now and restart at startup:
+  sudo brew services start unbound
+==> readline
+readline is keg-only, which means it was not symlinked into /usr/local,
+because macOS provides the BSD libedit library, which shadows libreadline.
+In order to prevent conflicts when programs look for libreadline we are
+defaulting this GNU Readline installation to keg-only.
+
+For compilers to find readline you may need to set:
+  export LDFLAGS="-L/usr/local/opt/readline/lib"
+  export CPPFLAGS="-I/usr/local/opt/readline/include"
+
+==> sqlite
+sqlite is keg-only, which means it was not symlinked into /usr/local,
+because macOS provides an older sqlite3.
+
+If you need to have sqlite first in your PATH run:
+  echo 'export PATH="/usr/local/opt/sqlite/bin:$PATH"' >> ~/.bash_profile
+
+For compilers to find sqlite you may need to set:
+  export LDFLAGS="-L/usr/local/opt/sqlite/lib"
+  export CPPFLAGS="-I/usr/local/opt/sqlite/include"
+
+==> python
+Python has been installed as
+  /usr/local/bin/python3
+
+Unversioned symlinks `python`, `python-config`, `pip` etc. pointing to
+`python3`, `python3-config`, `pip3` etc., respectively, have been installed into
+  /usr/local/opt/python/libexec/bin
+
+If you need Homebrew's Python 2.7 run
+  brew install python@2
+
+You can install Python packages with
+  pip3 install <package>
+They will install into the site-package directory
+  /usr/local/lib/python3.7/site-packages
+
+See: https://docs.brew.sh/Homebrew-and-Python
+==> tesseract
+This formula contains only the "eng", "osd", and "snum" language data files.
+If you need all the other supported languages, `brew install tesseract-lang`.
+==> openblas
+openblas is keg-only, which means it was not symlinked into /usr/local,
+because macOS provides BLAS and LAPACK in the Accelerate framework.
+
+For compilers to find openblas you may need to set:
+  export LDFLAGS="-L/usr/local/opt/openblas/lib"
+  export CPPFLAGS="-I/usr/local/opt/openblas/include"
+
+==> python@2
+Pip and setuptools have been installed. To update them
+  pip install --upgrade pip setuptools
+
+You can install Python packages with
+  pip install <package>
+
+They will install into the site-package directory
+  /usr/local/lib/python2.7/site-packages
+
+See: https://docs.brew.sh/Homebrew-and-Python
+==> numpy
+If you use system python (that comes - depending on the OS X version -
+with older versions of numpy, scipy and matplotlib), you may need to
+ensure that the brewed packages come earlier in Python's sys.path with:
+  mkdir -p /Users/nakazawa/Library/Python/2.7/lib/python/site-packages
+  echo 'import sys; sys.path.insert(1, "/usr/local/lib/python3.7/site-packages")' >> /Users/nakazawa/Library/Python/2.7/lib/python/site-packages/homebrew.pth
+[plaidml] nakazawa@UX-IMAC5K.local[425]#
