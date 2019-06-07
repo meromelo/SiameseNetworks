@@ -19,8 +19,8 @@
     "python.linting.pylintArgs": [
         "--indent-string='\t'",
         "--disable-msg=C0111",
-        "--ignored-modules=numpy,cv2,matplotlib",
-        "--ignored-classes=numpy,cv2,matplotlib",
-        "--extension-pkg-whitelist=numpy,cv2,matplotlib"
+        "--ignored-modules=numpy,cv2,matplotlib,dlib",
+        "--ignored-classes=numpy,cv2,matplotlib,dlib",
+        "--extension-pkg-whitelist=numpy,cv2,matplotlib,dlib"
     ]
 }
