@@ -205,9 +205,11 @@ known_face_names, known_face_encodings = scan_known_people(known_people_folder)
 
 # Get a reference to webcam #0 (the default one)
 video_capture = cv2.VideoCapture(0)
+#if not video_capture.isOpened():
+#	print( f"cannot open camera, exited.")
+#	sys.exit()
 if not video_capture.isOpened():
-	print( f"cannot open camera, exited.")
-	sys.exit()
+	raise ImportError("Couldn't open video file or webcam.")
 
 video_capture.set(cv2.CAP_PROP_FPS, 60)           # カメラFPSを60FPSに設定
 video_capture.set(cv2.CAP_PROP_FRAME_WIDTH,  1280) # カメラ画像の横幅を1280に設定
