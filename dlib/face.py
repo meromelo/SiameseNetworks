@@ -246,6 +246,12 @@ if not video_capture.isOpened():
 #if not video_capture.isOpened():
 #	raise ImportError("Couldn't open video file or webcam.")
 
+#
+# Macbook12
+#	fps=30.0
+#	w=848.0
+#	h=480.0
+#
 video_capture.set(cv2.CAP_PROP_FPS, 60)           # カメラFPSを60FPSに設定
 video_capture.set(cv2.CAP_PROP_FRAME_WIDTH,  1280) # カメラ画像の横幅を1280に設定
 video_capture.set(cv2.CAP_PROP_FRAME_HEIGHT,  720) # カメラ画像の縦幅を720に設定
