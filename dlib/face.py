@@ -195,6 +195,13 @@ def test_image(image_to_check, known_names, known_face_encodings, tolerance=0.6,
 		# print out fact that no faces were found in image
 		print_result(image_to_check, "no_persons_found", None, show_distance)
 
+#
+# find face locations by haarcascade
+#
+def face_locations_by_haarcascade(frame, face_cascade):
+	gray	= cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
+	faces	= face_cascade.detectMultiScale(gray, 1.3, 5)
+	return faces
 
 ######################
 #
@@ -204,17 +211,32 @@ def test_image(image_to_check, known_names, known_face_encodings, tolerance=0.6,
 known_people_folder = "pictures/jpg"
 known_face_names, known_face_encodings = scan_known_people(known_people_folder)
 
+#
+# args
+#
+#	parser.add_argument('--flag', action='store_true')
+#	parser.add_argument('--fruit', choices=['apple', 'banana', 'orange'])
+#	parser.add_argument('--colors', nargs='*')						# python test.py --colors red green blue
+#	parser.add_agument("-a", required=True)							# required
+#	parser.add_argument('--number', type=int)    					# 整数値(int)
+#	parser.add_argument('--alpha', type=float, default=0.01)    	# 実数値(float)
+#	p = lambda x:list(map(int, x.split('.')))
+#	parser.add_argument('--address', type=tp, help='IP address')	# python test.py --address 192.168.31.150
+#
+# parser.add_argument('video')
 parser = argparse.ArgumentParser()
-parser.add_argument('video')
+parser.add_argument('-v', '--video', type=int, default=0)
+parser.add_argument('-c', '--cascade', default=False, action='store_true')
 args = parser.parse_args()
- 
+
 if args.video == "0":
 	video_capture = cv2.VideoCapture(0)
 else:
 	video_capture = cv2.VideoCapture(args.video)
+
 if not video_capture.isOpened():
 	raise ImportError("Couldn't open video file or webcam.")
- 
+
 
 # Get a reference to webcam #0 (the default one)
 #video_capture = cv2.VideoCapture(0)
@@ -244,7 +266,10 @@ downRatio	= 2.0
 ratioValue	= 1.0 / downRatio
 print( f"isFast={isFast}, downRatio={downRatio}, ratioValue={ratioValue}" )
 
-
+#
+# face haarcascade
+#
+face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 # while True:
 while(video_capture.isOpened() == True):
@@ -277,8 +302,16 @@ while(video_capture.isOpened() == True):
 	# Find all the faces and face enqcodings in the frame of video
 	#	face_locations = face_recognition.face_locations(rgb_frame, number_of_times_to_upsample=1, model='cnn')
 	#	face_locations = face_recognition.face_locations(rgb_frame, number_of_times_to_upsample=1, model='hog')
-	face_locations = face_recognition.face_locations(rgb_frame, number_of_times_to_upsample=1, model='hog')
-	face_encodings = face_recognition.face_encodings(rgb_frame, face_locations)
+	face_locations	= []
+	if args.cascade == True:
+		print( f"using haarcascade for face_locations" )
+		face_locations	= face_locations_by_haarcascade  (rgb_frame, face_cascade)
+	else:
+		print( f"using hog for face_locations" )
+		face_locations	= face_recognition.face_locations(rgb_frame, number_of_times_to_upsample=1, model='hog')
+
+	print( f"face_locations={len(face_locations)}")
+	face_encodings	= face_recognition.face_encodings(rgb_frame, face_locations)
 
 	# Loop through each face in this frame of video
 	for (top, right, bottom, left), face_encoding in zip(face_locations, face_encodings):
@@ -321,7 +354,8 @@ while(video_capture.isOpened() == True):
 		cv2.imshow('Video', frame)
 
 	# Hit 'q' on the keyboard to quit!
-	c = cv2.waitKey(1) & 0xFF
+	# c = cv2.waitKey(1) & 0xFF
+	c = cv2.waitKey(1)
 	if c == ord('q'):
 		break
 	if c == 32:	#spaceで保存

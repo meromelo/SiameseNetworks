@@ -19,6 +19,7 @@
 /dlib/screenshot/
 /dlib/screenshot/*.jpg
 /dlib/*.jpg
+/dlib/*.xml
 *.swp
 keras.json
 .tcshrc
