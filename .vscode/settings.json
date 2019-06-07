@@ -1,15 +1,17 @@
 {
-    "python.pythonPath": "/TOOL/Dev/anaconda3/bin/python",
     "editor.fontFamily": "Monoid-Retina, mplus-1mn-medium, mplus-1mn-regular, mplus-1mn-light, CamingoCode-Regular, CamingoCode-Italic, BPmono-Italic, mplus-2m-medium, BPmono, SF Mono, PT Mono, Menlo, Monaco, 'Courier New', monospace",
     "editor.fontSize": 11,
     "workbench.colorCustomizations": {
         "editor.background": "#000000",
         "editor.foreground": "#ffffff"
     },
-    // "python.pythonPath": "/TOOL/Dev/anaconda3/bin/python", 
+    "python.pythonPath": "/TOOL/Dev/anaconda/anaconda3/bin/python",
+    "python.envFile": ".env",
     "python.autoComplete.addBrackets": true,
     "python.autoComplete.extraPaths": [
-        "/TOOL/Dev/anaconda3/lib/site-packages"
+        "/TOOL/Dev/anaconda3/lib/site-packages",
+        ".",
+        "/Volumes/SSD/Users/nakazawa/Projects/Python/plaidml/SiameseNetworks/facenet"
     ],
     // "python.autoComplete.preloadModules": [
     //     "cv2",

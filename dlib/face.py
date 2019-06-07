@@ -1,10 +1,11 @@
 
-import face_recognition
-import cv2
-import numpy as np
 import os
 import re
 import sys
+import argparse
+import face_recognition
+import cv2
+import numpy as np
 
 import PIL.Image
 import PIL.ImageDraw
@@ -203,13 +204,25 @@ def test_image(image_to_check, known_names, known_face_encodings, tolerance=0.6,
 known_people_folder = "pictures/jpg"
 known_face_names, known_face_encodings = scan_known_people(known_people_folder)
 
+parser = argparse.ArgumentParser()
+parser.add_argument('video')
+args = parser.parse_args()
+ 
+if args.video == "0":
+	video_capture = cv2.VideoCapture(0)
+else:
+	video_capture = cv2.VideoCapture(args.video)
+if not video_capture.isOpened():
+	raise ImportError("Couldn't open video file or webcam.")
+ 
+
 # Get a reference to webcam #0 (the default one)
-video_capture = cv2.VideoCapture(0)
+#video_capture = cv2.VideoCapture(0)
 #if not video_capture.isOpened():
 #	print( f"cannot open camera, exited.")
 #	sys.exit()
-if not video_capture.isOpened():
-	raise ImportError("Couldn't open video file or webcam.")
+#if not video_capture.isOpened():
+#	raise ImportError("Couldn't open video file or webcam.")
 
 video_capture.set(cv2.CAP_PROP_FPS, 60)           # カメラFPSを60FPSに設定
 video_capture.set(cv2.CAP_PROP_FRAME_WIDTH,  1280) # カメラ画像の横幅を1280に設定
