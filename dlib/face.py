@@ -202,24 +202,26 @@ def face_locations_by_haarcascade(frame, rgb_frame, face_cascade):
 	gray	= cv2.cvtColor(rgb_frame, cv2.COLOR_RGB2GRAY)
 	faces	= face_cascade.detectMultiScale(gray, 1.3, 5)
 
-	print (f"haar faces:{faces}")
+	# if len(faces) > 0:
+	#	print (f"haar faces:{faces}")
+
 	#
 	# Loop through all the faces detected and determine whether or not they are in the database
+	# (top, right, bottom, left), face_encoding in zip(face_locations, face_encodings):
 	#	cv2.rectangle(frame, (left, top), (right, bottom), (0, 0, 255), 2)
-	#	-> (217, 563, 440, 340)
-	#	-- (330, 187, 571, 428)
 	#
 	common_faces	= []
-	padding	= 0;
+	padding	= 5;
 	for (x, y, w, h) in faces:
 		x1 = x     - padding
 		y1 = y     - padding
 		x2 = x + w + padding
 		y2 = y + h + padding
-		img = cv2.rectangle( frame, (x1, y1), (x2, y2),(0,255,0), 2 )
-		img = cv2.rectangle( frame, (0,0), (100,100),(0,255,0), 2 )
-		cv2.imshow('Video', img)
-		common_faces.append( (x1, y2, x2, y1) )
+		# img = cv2.rectangle( frame, (x1, y1), (x2, y2),(0,255,0), 2 )
+		# img = cv2.rectangle( frame, (0,0), (100,100),(0,255,0), 2 )
+		# cv2.imshow('Video', img)
+		common_faces.append( (y1, x2, y2, x1) )
+		# print (f"haar faces:{faces}")
 	return common_faces
 
 ######################
@@ -306,7 +308,7 @@ while(video_capture.isOpened() == True):
 	if not ret:
 		print( f"-" )
 		continue
-	print( f"." )
+	# print( f"." )
 
 	#
 	# Resize frame of video to 1/4 size for faster face recognition processing
