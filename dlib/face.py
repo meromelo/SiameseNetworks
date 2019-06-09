@@ -198,10 +198,29 @@ def test_image(image_to_check, known_names, known_face_encodings, tolerance=0.6,
 #
 # find face locations by haarcascade
 #
-def face_locations_by_haarcascade(frame, face_cascade):
-	gray	= cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
+def face_locations_by_haarcascade(frame, rgb_frame, face_cascade):
+	gray	= cv2.cvtColor(rgb_frame, cv2.COLOR_RGB2GRAY)
 	faces	= face_cascade.detectMultiScale(gray, 1.3, 5)
-	return faces
+
+	print (f"haar faces:{faces}")
+	#
+	# Loop through all the faces detected and determine whether or not they are in the database
+	#	cv2.rectangle(frame, (left, top), (right, bottom), (0, 0, 255), 2)
+	#	-> (217, 563, 440, 340)
+	#	-- (330, 187, 571, 428)
+	#
+	common_faces	= []
+	padding	= 0;
+	for (x, y, w, h) in faces:
+		x1 = x     - padding
+		y1 = y     - padding
+		x2 = x + w + padding
+		y2 = y + h + padding
+		img = cv2.rectangle( frame, (x1, y1), (x2, y2),(0,255,0), 2 )
+		img = cv2.rectangle( frame, (0,0), (100,100),(0,255,0), 2 )
+		cv2.imshow('Video', img)
+		common_faces.append( (x1, y2, x2, y1) )
+	return common_faces
 
 ######################
 #
@@ -275,7 +294,8 @@ print( f"isFast={isFast}, downRatio={downRatio}, ratioValue={ratioValue}" )
 #
 # face haarcascade
 #
-face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+if args.cascade == True:
+	face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 # while True:
 while(video_capture.isOpened() == True):
@@ -310,13 +330,16 @@ while(video_capture.isOpened() == True):
 	#	face_locations = face_recognition.face_locations(rgb_frame, number_of_times_to_upsample=1, model='hog')
 	face_locations	= []
 	if args.cascade == True:
-		print( f"using haarcascade for face_locations" )
-		face_locations	= face_locations_by_haarcascade  (rgb_frame, face_cascade)
+		# print( f"using haarcascade for face_locations" )
+		face_locations	= face_locations_by_haarcascade  (frame, rgb_frame, face_cascade)
 	else:
-		print( f"using hog for face_locations" )
+		# print( f"using hog for face_locations" )
 		face_locations	= face_recognition.face_locations(rgb_frame, number_of_times_to_upsample=1, model='hog')
 
-	print( f"face_locations={len(face_locations)}")
+	if len(face_locations) > 0:
+		print( f"face_locations={face_locations}")
+
+	# print( f"face_locations={len(face_locations)}")
 	face_encodings	= face_recognition.face_encodings(rgb_frame, face_locations)
 
 	# Loop through each face in this frame of video
