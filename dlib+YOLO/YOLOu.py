@@ -118,7 +118,7 @@ class FPS:
         return self
 
     def stop(self):
-        self._end = datetime.datetime.now()
+        self._end   = datetime.datetime.now()
 
     def update(self):
         # increment the total number of frames examined during the
@@ -141,10 +141,8 @@ def refined_box(left, top, width, height):
     original_vert_height	= bottom - top
     top						= int(top + original_vert_height * 0.15)
     bottom					= int(bottom - original_vert_height * 0.05)
-
     margin					= ((bottom - top) - (right - left)) // 2
     left					= left - margin if (bottom - top - right + left) % 2 == 0 else left - margin - 1
-
     right					= right + margin
 
     return left, top, right, bottom

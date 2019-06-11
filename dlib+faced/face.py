@@ -11,7 +11,8 @@ import PIL.Image
 import PIL.ImageDraw
 import imutils
 
-from YOLOu import *
+#from YOLOu import *
+import YOLOu as YOLOu
 from faced import FaceDetector
 from faced.utils import annotate_image
 
@@ -234,16 +235,19 @@ def face_locations_by_haarcascade(frame, rgb_frame, face_cascade):
 def face_locations_by_YOLO(frame, rgb_frame, YOLOnet):
 
 	# Create a 4D blob from a frame.
-	blob = cv2.dnn.blobFromImage(frame, 1 / 255, (IMG_WIDTH, IMG_HEIGHT), [0, 0, 0], 1, crop=False)
+	# blob = cv2.dnn.blobFromImage(frame, 1 / 255, (IMG_WIDTH, IMG_HEIGHT), [0, 0, 0], 1, crop=False)
+	blob = cv2.dnn.blobFromImage(frame, 1 / 255, (YOLOu.IMG_WIDTH, YOLOu.IMG_HEIGHT), [0, 0, 0], 1, crop=False)
 
 	# Sets the input to the network
 	YOLOnet.setInput(blob)
 
 	# Runs the forward pass to get output of the output layers
-	outs = YOLOnet.forward(get_outputs_names(YOLOnet))
+	# outs = YOLOnet.forward(get_outputs_names(YOLOnet))
+	outs = YOLOnet.forward(YOLOu.get_outputs_names(YOLOnet))
 
 	# Remove the bounding boxes with low confidence
-	faces = post_process(frame, outs, CONF_THRESHOLD, NMS_THRESHOLD)
+	# faces = post_process(frame, outs, CONF_THRESHOLD, NMS_THRESHOLD)
+	faces = YOLOu.post_process(frame, outs, YOLOu.CONF_THRESHOLD, YOLOu.NMS_THRESHOLD)
 
 	#
 	# Loop through all the faces detected and determine whether or not they are in the database
@@ -366,13 +370,11 @@ if not video_capture.isOpened():
 #	raise ImportError("Couldn't open video file or webcam.")
 
 #
-# Macbook12
-#	fps=30.0
-#	w=848.0
-#	h=480.0
+# Macbook12: fps=30.0, w=848.0, h=480.0
+# iMac5K   : fps=29.97002997002997, w=960.0, h=544.0, detecting faces: YOLOv3.
 #
 video_capture.set(cv2.CAP_PROP_FPS, 60)           # カメラFPSを60FPSに設定
-video_capture.set(cv2.CAP_PROP_FRAME_WIDTH,  780) # カメラ画像の横幅を1280に設定
+video_capture.set(cv2.CAP_PROP_FRAME_WIDTH,  640) # カメラ画像の横幅を1280に設定
 video_capture.set(cv2.CAP_PROP_FRAME_HEIGHT, 480) # カメラ画像の縦幅を720に設定
 print(f"fps={video_capture.get(cv2.CAP_PROP_FPS)}")
 print(f"w={video_capture.get(cv2.CAP_PROP_FRAME_WIDTH)}")
