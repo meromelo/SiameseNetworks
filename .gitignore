@@ -32,6 +32,7 @@
 /2_dlib+YOLO/__pycache__/
 /2_dlib+YOLO/YOLOv3-wider_16000.weights/
 /2_dlib+YOLO/YOLOv3-wider_16000.weights
+/2_dlib+YOLO/*.jpg
 
 /3_dlib+faced/YOLOu.py
 /3_dlib+faced/YOLOv3-face.cfg
@@ -44,6 +45,7 @@
 /3_dlib+faced/models/
 /3_dlib+faced/models
 /3_dlib+faced/__pycache__/
+/3_dlib+faced/*.jpg
 
 *.swp
 keras.json
