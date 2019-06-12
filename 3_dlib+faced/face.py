@@ -201,6 +201,11 @@ def test_image(image_to_check, known_names, known_face_encodings, tolerance=0.6,
 		print_result(image_to_check, "no_persons_found", None, show_distance)
 
 #
+# dlib
+#	https://pypi.org/project/face_recognition/
+#
+
+#
 # find face locations by haarcascade
 #
 def face_locations_by_haarcascade(frame, rgb_frame, face_cascade):
@@ -231,6 +236,7 @@ def face_locations_by_haarcascade(frame, rgb_frame, face_cascade):
 
 #
 # find face locations by YOLO
+#	https://github.com/sthanhng/yoloface
 #
 def face_locations_by_YOLO(frame, rgb_frame, YOLOnet):
 
@@ -269,7 +275,10 @@ def face_locations_by_YOLO(frame, rgb_frame, YOLOnet):
 	return common_faces
 
 #
-# find face locations by FaceDetector
+# find face locations by faced (FaceDetector)
+#	https://towardsdatascience.com/faced-cpu-real-time-face-detection-using-deep-learning-1488681c1602
+#	https://github.com/iitzco/faced
+#	pip install git+https://github.com/iitzco/faced.git
 #
 def face_locations_by_FaceDetector(frame, rgb_frame):
 	#

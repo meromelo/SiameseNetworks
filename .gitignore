@@ -26,6 +26,7 @@
 #/1_dlib/Face-Recognition-Using-OpenCV-and-Python-master/
 #/1_dlib/face_recognition-master/
 
+/2_dlib+YOLO/RGB-D_Face_database
 /2_dlib+YOLO/haarcascade_frontalface_default.xml
 /2_dlib+YOLO/pictures/
 /2_dlib+YOLO/pictures
