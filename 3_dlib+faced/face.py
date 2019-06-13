@@ -216,9 +216,7 @@ def face_locations_by_haarcascade(frame, rgb_frame, face_cascade):
 	#	print (f"haar faces:{faces}")
 
 	#
-	# Loop through all the faces detected and determine whether or not they are in the database
-	# (top, right, bottom, left), face_encoding in zip(face_locations, face_encodings):
-	#	cv2.rectangle(frame, (left, top), (right, bottom), (0, 0, 255), 2)
+	#	common_faces
 	#
 	common_faces	= []
 	padding	= 5;
@@ -227,11 +225,7 @@ def face_locations_by_haarcascade(frame, rgb_frame, face_cascade):
 		y1 = y     - padding
 		x2 = x + w + padding
 		y2 = y + h + padding
-		# img = cv2.rectangle( frame, (x1, y1), (x2, y2),(0,255,0), 2 )
-		# img = cv2.rectangle( frame, (0,0), (100,100),(0,255,0), 2 )
-		# cv2.imshow('Video', img)
-		common_faces.append( (y1, x2, y2, x1) )
-		# print (f"haar faces:{faces}")
+		common_faces.append( (y1, x2, y2, x1) )	# # top, right, bottom, left
 	return common_faces
 
 #
@@ -256,9 +250,7 @@ def face_locations_by_YOLO(frame, rgb_frame, YOLOnet):
 	faces = YOLOu.post_process(frame, outs, YOLOu.CONF_THRESHOLD, YOLOu.NMS_THRESHOLD)
 
 	#
-	# Loop through all the faces detected and determine whether or not they are in the database
-	# (top, right, bottom, left), face_encoding in zip(face_locations, face_encodings):
-	#	cv2.rectangle(frame, (left, top), (right, bottom), (0, 0, 255), 2)
+	#	common_faces
 	#
 	common_faces	= []
 	padding	= 5;
@@ -267,10 +259,8 @@ def face_locations_by_YOLO(frame, rgb_frame, YOLOnet):
 		y1 = y     - padding
 		x2 = x + w + padding
 		y2 = y + h + padding
-		# img = cv2.rectangle( frame, (x1, y1), (x2, y2),(0,255,0), 2 )
-		# img = cv2.rectangle( frame, (0,0), (100,100),(0,255,0), 2 )
 		# cv2.imshow('Video', img)
-		common_faces.append( (y1, x2, y2, x1) )
+		common_faces.append( (y1, x2, y2, x1) )	 # top, right, bottom, left
 		# print (f"haar faces:{faces}")
 	return common_faces
 
@@ -285,12 +275,11 @@ def face_locations_by_FaceDetector(frame, rgb_frame):
 	# find faces
 	#	return: x, y, w, h, ?
 	faces	= face_detector.predict(rgb_frame, thresh=0.85)
-	# faces	= face_detector.predict(frame, thresh=0.85)
-	print (f"FaceDetector faces:{faces}")
+	# print (f"FaceDetector faces:{faces}")
 
-	# for x, y, w, h, p in bboxes:
-	#	cv2.rectangle(ret, (int(x - w/2), int(y - h/2)), (int(x + w/2), int(y + h/2)), (0, 255, 0), 3)
-
+	#
+	#	common_faces
+	#
 	common_faces	= []
 	padding	= 5;
 	for (x, y, w, h, _) in faces:
@@ -298,12 +287,10 @@ def face_locations_by_FaceDetector(frame, rgb_frame):
 		y1 = int(y-h/2) - padding
 		x2 = int(x+w/2) + padding
 		y2 = int(y+h/2) + padding
-		# common_faces.append( (x, y, x+w, y+h) )
-		# top, right, bottom, left 
-		common_faces.append( (y1,x2,y2,x1) )
-		img = cv2.rectangle( frame, (x1,y1), (x2,y2), (0,255,0), 2 )
+		common_faces.append( (y1,x2,y2,x1) )	# top, right, bottom, left 
+		# img = cv2.rectangle( frame, (x1,y1), (x2,y2), (0,255,0), 2 )
 
-	print (f"FaceDetector common_faces:{common_faces}")
+	# print (f"FaceDetector common_faces:{common_faces}")
 	return common_faces
 
 ######################
@@ -328,6 +315,7 @@ known_face_names, known_face_encodings = scan_known_people(known_people_folder)
 #	parser.add_argument('--address', type=tp, help='IP address')	# python test.py --address 192.168.31.150
 #
 parser = argparse.ArgumentParser()
+parser.add_argument('-s', '--size',				type=int,	default=480, help='width size of the camera')
 parser.add_argument('-f', '--model-cfg',		type=str,	default='YOLOv3-face.cfg', help='path to config file')
 parser.add_argument('-w', '--model-weights',	type=str,	default='YOLOv3-wider_16000.weights', help='path to weights of model')
 parser.add_argument('-c', '--cascade',						default=False, action='store_true', help='detecting faces by adaboost haarcascade')
@@ -382,9 +370,9 @@ if not video_capture.isOpened():
 # Macbook12: fps=30.0, w=848.0, h=480.0
 # iMac5K   : fps=29.97002997002997, w=960.0, h=544.0, detecting faces: YOLOv3.
 #
-video_capture.set(cv2.CAP_PROP_FPS, 60)           # カメラFPSを60FPSに設定
-video_capture.set(cv2.CAP_PROP_FRAME_WIDTH,  640) # カメラ画像の横幅を1280に設定
-video_capture.set(cv2.CAP_PROP_FRAME_HEIGHT, 480) # カメラ画像の縦幅を720に設定
+video_capture.set(cv2.CAP_PROP_FPS, 60)           		# カメラFPSを60FPSに設定
+video_capture.set(cv2.CAP_PROP_FRAME_WIDTH, args.size)		# カメラ画像の横幅を1280に設定 (640)
+# video_capture.set(cv2.CAP_PROP_FRAME_HEIGHT, args.size)	# カメラ画像の縦幅を720に設定 (480)
 print(f"fps={video_capture.get(cv2.CAP_PROP_FPS)}")
 print(f"w={video_capture.get(cv2.CAP_PROP_FRAME_WIDTH)}")
 print(f"h={video_capture.get(cv2.CAP_PROP_FRAME_HEIGHT)}")
@@ -418,6 +406,11 @@ while(video_capture.isOpened() == True):
 		print( f"-" )
 		continue
 	# print( f"." )
+
+	#
+	# flip
+	#
+	frame = cv2.flip(frame, 1) # Flip camera vertically
 
 	#
 	# Resize frame of video to 1/4 size for faster face recognition processing
@@ -454,7 +447,8 @@ while(video_capture.isOpened() == True):
 
 	else:
 		# print( f"using hog for face_locations" )
-		face_locations	= face_recognition.face_locations(rgb_frame, number_of_times_to_upsample=1, model='hog')
+		model_type		= "hog"	# hog or cnn
+		face_locations	= face_recognition.face_locations(rgb_frame, number_of_times_to_upsample=1, model=model_type)
 
 
 	#
