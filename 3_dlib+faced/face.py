@@ -358,12 +358,13 @@ else:
 
 # cv2.namedWindow('Video', cv2.WINDOW_NORMAL)
 WindowName	= "Video"
-# cv2.namedWindow(WindowName)
-cv2.namedWindow(WindowName, cv2.WINDOW_NORMAL)
+cv2.namedWindow(WindowName)
+# cv2.namedWindow(WindowName, cv2.WINDOW_NORMAL)
 # These two lines will force your "Main View" window to be on top with focus.
 # cv2.WINDOW_AUTOSIZE, cv2.WINDOW_FULLSCREEN, cv2.WINDOW_GUI_EXPANDED, cv2.WINDOW_OPENGL
-# cv2.setWindowProperty(WindowName, cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
-# cv2.setWindowProperty(WindowName, cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_NORMAL)
+cv2.setWindowProperty(WindowName, cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
+cv2.waitKey(10)
+cv2.setWindowProperty(WindowName, cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_NORMAL)
 # cv2.setWindowProperty(WindowName, cv2.WND_PROP_OPENGL, cv2.WINDOW_OPENGL)
 
 
