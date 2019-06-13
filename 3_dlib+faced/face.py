@@ -293,6 +293,15 @@ def face_locations_by_FaceDetector(frame, rgb_frame):
 	# print (f"FaceDetector common_faces:{common_faces}")
 	return common_faces
 
+def mosaic(src, ratio=0.1):
+	small = cv2.resize(src, None, fx=ratio, fy=ratio, interpolation=cv2.INTER_NEAREST)
+	return cv2.resize(small, src.shape[:2][::-1], interpolation=cv2.INTER_NEAREST)
+
+def mosaic_area(src, x, y, width, height, ratio=0.1):
+	dst = src.copy()
+	dst[y:y + height, x:x + width] = mosaic(dst[y:y + height, x:x + width], ratio)
+	return dst
+
 ######################
 #
 # main
@@ -329,6 +338,7 @@ args = parser.parse_args()
 #
 if args.cascade == True:
 	print( f"detecting faces: AdaBoost using haarcascade." )
+	face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 elif args.YOLOv3 == True:
 	print( f"detecting faces: YOLOv3." )
@@ -346,14 +356,22 @@ else:
 	print( f"detecting faces: dlib hog/cnn." )
 
 
+# cv2.namedWindow('Video', cv2.WINDOW_NORMAL)
+WindowName	= "Video"
+# cv2.namedWindow(WindowName)
+cv2.namedWindow(WindowName, cv2.WINDOW_NORMAL)
+# These two lines will force your "Main View" window to be on top with focus.
+# cv2.WINDOW_AUTOSIZE, cv2.WINDOW_FULLSCREEN, cv2.WINDOW_GUI_EXPANDED, cv2.WINDOW_OPENGL
+# cv2.setWindowProperty(WindowName, cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
+# cv2.setWindowProperty(WindowName, cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_NORMAL)
+# cv2.setWindowProperty(WindowName, cv2.WND_PROP_OPENGL, cv2.WINDOW_OPENGL)
+
+
 #
 # vide capture
 #
-if args.device == "0":
-	video_capture = cv2.VideoCapture(0)
-else:
-	video_capture = cv2.VideoCapture(args.device)
-
+print( f"video capture device: {args.device}" )
+video_capture = cv2.VideoCapture(args.device)
 if not video_capture.isOpened():
 	raise ImportError("Couldn't open video file or webcam.")
 
@@ -373,9 +391,9 @@ if not video_capture.isOpened():
 video_capture.set(cv2.CAP_PROP_FPS, 60)           		# カメラFPSを60FPSに設定
 video_capture.set(cv2.CAP_PROP_FRAME_WIDTH, args.size)		# カメラ画像の横幅を1280に設定 (640)
 # video_capture.set(cv2.CAP_PROP_FRAME_HEIGHT, args.size)	# カメラ画像の縦幅を720に設定 (480)
-print(f"fps={video_capture.get(cv2.CAP_PROP_FPS)}")
-print(f"w={video_capture.get(cv2.CAP_PROP_FRAME_WIDTH)}")
-print(f"h={video_capture.get(cv2.CAP_PROP_FRAME_HEIGHT)}")
+print(f"video capture device: fps={video_capture.get(cv2.CAP_PROP_FPS)}")
+print(f"video capture device: w={video_capture.get(cv2.CAP_PROP_FRAME_WIDTH)}")
+print(f"video capture device: h={video_capture.get(cv2.CAP_PROP_FRAME_HEIGHT)}")
 
 #
 # count
@@ -388,13 +406,14 @@ count = 0
 isFast		= False
 downRatio	= 2.0
 ratioValue	= 1.0 / downRatio
-print( f"isFast={isFast}, downRatio={downRatio}, ratioValue={ratioValue}" )
+#print( f"isFast={isFast}, downRatio={downRatio}, ratioValue={ratioValue}" )
 
 #
 # face haarcascade
 #
-if args.cascade == True:
-	face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+#if args.cascade == True:
+#	face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+
 
 # while True:
 while(video_capture.isOpened() == True):
@@ -410,7 +429,7 @@ while(video_capture.isOpened() == True):
 	#
 	# flip
 	#
-	frame = cv2.flip(frame, 1) # Flip camera vertically
+	frame = cv2.flip(frame, 1) # Flip camera horizontaly
 
 	#
 	# Resize frame of video to 1/4 size for faster face recognition processing
@@ -447,8 +466,8 @@ while(video_capture.isOpened() == True):
 
 	else:
 		# print( f"using hog for face_locations" )
-		model_type		= "hog"	# hog or cnn
-		face_locations	= face_recognition.face_locations(rgb_frame, number_of_times_to_upsample=1, model=model_type)
+		name			= "hog"	# hog or cnn
+		face_locations	= face_recognition.face_locations(rgb_frame, number_of_times_to_upsample=1, model=name)
 
 
 	#
@@ -488,17 +507,29 @@ while(video_capture.isOpened() == True):
 			bottom	*= int(downRatio)
 			left	*= int(downRatio)
 
+		#
+		# mosaic
+		#
+		frame = mosaic_area(frame, left, top, right-left, bottom-top, ratio=0.05)
+
+		#
 		# Draw a box around the face
+		#
 		cv2.rectangle(frame, (left, top), (right, bottom), (0, 0, 255), 2)
 
+		#
 		# Draw a label with a name below the face
+		#
 		cv2.rectangle(frame, (left, bottom - 35), (right, bottom), (0, 0, 255), cv2.FILLED)
 		font = cv2.FONT_HERSHEY_DUPLEX
 		cv2.putText(frame, name, (left + 6, bottom - 6), font, 1.0, (255, 255, 255), 1)
 
+
+
 	# Display the resulting image
 	if ret:
-		cv2.imshow('Video', frame)
+		# cv2.imshow('Video', frame)
+		cv2.imshow(WindowName, frame)
 
 	# Hit 'q' on the keyboard to quit!
 	# c = cv2.waitKey(1) & 0xFF
@@ -524,5 +555,6 @@ while(video_capture.isOpened() == True):
 
 # Release handle to the webcam
 video_capture.release()
+cv2.destroyWindow(WindowName)
 cv2.destroyAllWindows()
 
