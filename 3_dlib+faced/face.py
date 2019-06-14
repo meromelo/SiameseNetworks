@@ -164,6 +164,11 @@ def scan_known_people(folder):
 	# fr_image = faced.load_image_file(BytesIO(response.content))
 	# face_locations = faced.face_locations(fr_image)
 	#
+	if not os.path.exists(folder):
+		# print(f'scan_known_people: no such folder={folder}')
+		# raise ValueError('no such foler.')
+		return [], []
+
 	print(f'scan_known_people: ', end="")
 	known_names				= []
 	known_face_encodings	= []
@@ -640,9 +645,12 @@ if __name__ == '__main__':
 	#	create arrays of known face encodings and their names
 	#
 	import face_recognition as faced
-	print(f'known people foler: {args.pictures}')
+	print(f'known people foler: "{args.pictures}"')
 	known_face_names, known_face_encodings	= scan_known_people(args.pictures)
 
+	if len(known_face_names) == 0:
+		print(f'cannot scan known people: "{args.pictures}"')
+		sys.exit(1)
 
 	#
 	# main function
