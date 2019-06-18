@@ -8,8 +8,8 @@ import sys
 # sys.path.append('.')
 
 #	plaidml
-#   import plaidml.keras
-#   plaidml.keras.install_backend()
+# import plaidml.keras
+# plaidml.keras.install_backend()
 
 #
 # keras
@@ -86,6 +86,7 @@ def prepare_database():
 	for file in glob.glob("images/*"):
 		identity = os.path.splitext(os.path.basename(file))[0]
 		database[identity] = fr_utils.img_path_to_encoding(file, FRmodel)
+		print( f'prepare_database: file="{file}", identiti="{identity}"')
 	return database
 
 def webcam_face_recognizer(database):

@@ -27,8 +27,7 @@ while cap.isOpened():
         tm.start()
         count = 0
 
-    cv2.putText(frame, 'FPS: {:.2f}'.format(fps),
-                (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1.0, (0, 255, 0), thickness=2)
+    cv2.putText(frame, 'FPS: {:.2f}'.format(fps), (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1.0, (0, 255, 0), thickness=2)
     cv2.imshow(window_name, frame)
     count += 1
 
