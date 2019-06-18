@@ -65,6 +65,9 @@ global	face_detector
 ######################
 #
 # pillow -> opencv
+#	http://tatabox.hatenablog.com/entry/2013/07/21/231751
+#	OpenCV_data=np.asarray(PIL_data)
+#	https://qiita.com/derodero24/items/f22c22b22451609908ee
 #
 def pil2cv(image):
 	''' PIL型 -> OpenCV型 '''
