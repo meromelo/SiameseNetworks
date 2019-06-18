@@ -59,8 +59,8 @@ if os.getenv( 'VIRTUAL_ENV') == None:
 # params
 #
 global	face_cascade
-global	YOLOnet
 global	face_detector
+global	YOLOnet
 
 ######################
 #
@@ -650,7 +650,7 @@ if __name__ == '__main__':
 	parser.add_argument('-f', type=str,	default='YOLOv3-wider_16000.weights', help='if mode==YOLO, path to weights of model')
 	parser.add_argument('-r', type=float,	default=1.0, help="resize video capture frame for speed")
 	"""
-	parser.add_argument('--mode',		type=int,	default=0, choices=[0,1,2,3], help='detection algorithm. [0:hog, 1:haar, 2:YOLO, 3:faced]')
+	parser.add_argument('--mode',		type=int,	default=3, choices=[0,1,2,3], help='detection algorithm. [0:hog, 1:haar, 2:YOLO, 3:faced]')
 	parser.add_argument('--device',		type=int,	default=0, help='device id of source camera')
 	parser.add_argument('--size',		type=int,	default=480, help='width size of the camera')
 	parser.add_argument('--pictures',	type=str,	default='pictures/jpg', help='path for known people folder')
