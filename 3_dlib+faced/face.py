@@ -64,8 +64,22 @@ global	face_detector
 
 ######################
 #
-# mosaic
+# pillow -> opencv
 #
+def pil2cv(image):
+	''' PIL型 -> OpenCV型 '''
+	new_image = np.array(image)
+	if new_image.ndim == 2:  # モノクロ
+		pass
+	elif new_image.shape[2] == 3:  # カラー
+		# new_image = new_image[:, :, ::-1]
+		new_image = cv2.cvtColor(new_image, cv2.COLOR_RGB2BGR)
+	elif new_image.shape[2] == 4:  # 透過
+		# new_image = new_image[:, :, [2, 1, 0, 3]]
+		new_image = cv2.cvtColor(new_image, cv2.COLOR_RGBA2BGRA)
+	return new_image
+
+######################
 #
 # faceland mark
 #	cv2.rectangle(frame, (left, top), (right, bottom), (0, 0, 255), 2
@@ -75,7 +89,8 @@ def	draw_face_landmarks(fr_image, top, right, bottom, left):
 	# scan face landmarks
 	#
 	face_landmarks_list = faced.face_landmarks(fr_image)
-	print( f"face_landmarks={len(face_landmarks_list)}" )
+	# print( f"face_landmarks={len(face_landmarks_list)}" )
+	# print( f"face_landmarks={face_landmarks_list}" )
 
 	"""
 	clone = frame.copy()
@@ -113,12 +128,15 @@ def	draw_face_landmarks(fr_image, top, right, bottom, left):
 	# points = cv2.convexHull(points)
 	# cv2.fillConvexPoly(image, points, color = color)
 
-	# pil_image = PIL.Image.fromarray(fr_image)
-	for face_landmarks in face_landmarks_list:
-		cv2.rectangle(fr_image, face_landmarks['left_eyebrow'], color=(0,0,0,255), thickness=10)
+	pil_image = PIL.Image.fromarray(fr_image, 'RGB')
 
-		"""
+	for face_landmarks in face_landmarks_list:
+		#
+		# left_eyebrow=[(475, 232), (491, 219), (514, 219), (537, 225), (559, 237)]
+		#
+		# print( f'left_eyebrow={face_landmarks["left_eyebrow"]}')
 		d = PIL.ImageDraw.Draw(pil_image, 'RGBA')
+
 		# Make the eyebrows into a nightmare
 		d.line(face_landmarks['left_eyebrow'], fill=(0, 0, 0, 255), width=3)
 		d.line(face_landmarks['right_eyebrow'], fill=(0, 0, 0, 255), width=3)
@@ -147,8 +165,9 @@ def	draw_face_landmarks(fr_image, top, right, bottom, left):
 
 		# from IPython.display import display
 		# display(pil_image)
-		pil_image.show()
-		"""
+		# pil_image.show()
+
+	return pil2cv(pil_image)
 
 ######################
 #
@@ -490,7 +509,7 @@ def	main(mode:int=0, device:int=0, size:int=480, cfg:str='YOLOv3-cfg', weights:s
 				#
 				# face landmarks
 				#
-				# draw_face_landmarks(frame, top, right, bottom, left)
+				frame = draw_face_landmarks(rgb_frame, top, right, bottom, left)
 
 			#
 			# Scale back up face locations since the frame we detected in was scaled to 1/4 size
@@ -504,7 +523,7 @@ def	main(mode:int=0, device:int=0, size:int=480, cfg:str='YOLOv3-cfg', weights:s
 			#
 			# mosaic
 			#
-			frame = mosaic_area(frame, left, top, right-left, bottom-top, ratio=0.05)
+			# frame = mosaic_area(frame, left, top, right-left, bottom-top, ratio=0.05)
 
 			#
 			# Draw a box,label(name) around the face
