@@ -382,6 +382,15 @@ def	main(mode:int=0, device:int=0, size:int=480, cfg:str='YOLOv3-cfg', weights:s
 	down_sampling_ratio	= 1.0 / ratio
 
 	#
+	# fps
+	#
+	tm	= cv2.TickMeter()
+	tm.start()
+	fps_count		= 0
+	fps_count_max	= 10
+	fps_number		= 0
+
+	#
 	# capture video frame
 	#
 	while(video_capture.isOpened() == True):
@@ -507,6 +516,20 @@ def	main(mode:int=0, device:int=0, size:int=480, cfg:str='YOLOv3-cfg', weights:s
 
 		if len(face_locations) > 0:
 			print(f'.')
+
+		#
+		# fps
+		#
+		if fps_count == fps_count_max:
+			tm.stop()
+			fps_number	= fps_count_max / tm.getTimeSec()
+			tm.reset()
+			tm.start()
+			fps_count	= 0
+
+		cv2.putText(frame, 'FPS:{:.2f}'.format(fps_number), (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1.0, (0, 255, 0), thickness=2)
+		# cv2.imshow(window_name, frame)
+		fps_count += 1
 
 		# Display the resulting image
 		if ret:
