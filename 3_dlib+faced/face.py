@@ -636,6 +636,9 @@ def	main(mode:int=0, device:int=0, size:int=480, cfg:str='YOLOv3-cfg', weights:s
 				# print( f"1 {name}\td[{best_match_index:2d}]={face_distances[best_match_index]:6.4f},\t", end="\n" )
 				pass
 
+			# if facemarks == True:
+			# 	rgb_frame = draw_face_landmarks(rgb_frame, top, right, bottom, left, name)
+
 			#
 			# Scale back up face locations since the frame we detected in was scaled to 1/4 size
 			#
