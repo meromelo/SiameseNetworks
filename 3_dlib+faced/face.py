@@ -60,7 +60,17 @@ if os.getenv( 'VIRTUAL_ENV') == None:
 #
 global	face_cascade
 global	face_detector
-global	YOLOnet
+global	key_save
+global	key_facelandmarks
+global	key_mosaic
+global	key_quit
+global	facelandmarks_ext
+key_save				= ' '
+key_facelandmarks		= 'm'
+key_facelandmarks_ext	= 'e'
+key_mosaic				= 'a'
+key_quit				= 'q'
+facelandmarks_ext		= 0
 
 ######################
 #
@@ -71,15 +81,18 @@ global	YOLOnet
 #
 def pil2cv(image):
 	''' PIL型 -> OpenCV型 '''
-	new_image = np.array(image)
+	# new_image = np.array(image)
+	new_image = np.asarray(image)
 	if new_image.ndim == 2:  # モノクロ
 		pass
 	elif new_image.shape[2] == 3:  # カラー
 		# new_image = new_image[:, :, ::-1]
-		new_image = cv2.cvtColor(new_image, cv2.COLOR_RGB2BGR)
+		# new_image = cv2.cvtColor(new_image, cv2.COLOR_RGB2BGR)
+		pass
 	elif new_image.shape[2] == 4:  # 透過
 		# new_image = new_image[:, :, [2, 1, 0, 3]]
-		new_image = cv2.cvtColor(new_image, cv2.COLOR_RGBA2BGRA)
+		# new_image = cv2.cvtColor(new_image, cv2.COLOR_RGBA2BGRA)
+		pass
 	return new_image
 
 ######################
@@ -87,7 +100,7 @@ def pil2cv(image):
 # faceland mark
 #	cv2.rectangle(frame, (left, top), (right, bottom), (0, 0, 255), 2
 #
-def	draw_face_landmarks(fr_image, top, right, bottom, left, name):
+def	draw_face_landmarks(frame, top, right, bottom, left, name):
 	#
 	# scan face landmarks
 	# [{
@@ -102,23 +115,27 @@ def	draw_face_landmarks(fr_image, top, right, bottom, left, name):
 	# 	'bottom_lip'	: [(588, 371), (574, 383), (564, 388), (552, 390), (541, 388), (529, 382), (511, 368), (520, 369), (542, 371), (553, 373), (564, 372), (580, 371)]
 	# }]
 
-	# cv2.rectangle(fr_image, (left, top), (right, bottom), (0, 0, 255), 2)
-	# cv2.rectangle(fr_image, (left, bottom - 35), (right, bottom), (0, 0, 255), cv2.FILLED)
+	# cv2.rectangle(frame, (left, top), (right, bottom), (0, 0, 255), 2)
+	# cv2.rectangle(frame, (left, bottom - 35), (right, bottom), (0, 0, 255), cv2.FILLED)
+
+	"""
 	font = cv2.FONT_HERSHEY_DUPLEX
-	cv2.putText(fr_image, name, (left+10, top-10), font, 1.0, (0, 255, 0), 1)
+	cv2.putText(frame, name, (left+10, top-10), font, 1.0, (0, 255, 0), 1)
+	"""
 
 	#
 	# PIL image
 	#
-	pil_image = PIL.Image.fromarray(fr_image, 'RGB')
-	d = PIL.ImageDraw.Draw(pil_image, 'RGBA')
+	# pil_image = PIL.Image.fromarray(frame, 'RGB')
+	# d = PIL.ImageDraw.Draw(pil_image, 'RGBA')
 
+	"""
 	#
 	# box
 	#
 	x = left
 	y = top
-	w = right - left
+	w = right  - left
 	h = bottom - top
 	s = [(x,y+h/3), (x,y), (x+w/3,y)]
 	d.line(s, fill=(0, 255, 0, 255), width=3)
@@ -128,13 +145,13 @@ def	draw_face_landmarks(fr_image, top, right, bottom, left, name):
 	d.line(s, fill=(0, 255, 0, 255), width=3)
 	s = [(x+w-w/3,y+h), (x+w,y+h), (x+w,y+h-h/3)]
 	d.line(s, fill=(0, 255, 0, 255), width=3)
+	"""
 
 	#
 	# scan face landmarks
 	#
-	face_landmarks_list = faced.face_landmarks(fr_image)
-	# print( f"face_landmarks={len(face_landmarks_list)}" )
-	# print( f"face_landmarks={face_landmarks_list}" )
+	face_landmarks_list = faced.face_landmarks(frame)
+	print( f"facelandmarks: list name={name}, len={len(face_landmarks_list)}, face_landmarks={face_landmarks_list}" )
 
 	"""
 	clone = frame.copy()
@@ -172,84 +189,102 @@ def	draw_face_landmarks(fr_image, top, right, bottom, left, name):
 	# points = cv2.convexHull(points)
 	# cv2.fillConvexPoly(image, points, color = color)
 
-	# pil_image = PIL.Image.fromarray(fr_image, 'RGB')
-	# d = PIL.ImageDraw.Draw(pil_image, 'RGBA')
+	pil_image = PIL.Image.fromarray(frame, 'RGB')
+	d = PIL.ImageDraw.Draw(pil_image, 'RGBA')
 
+	count = 0
 	for face_landmarks in face_landmarks_list:
+		print( f"facelandmarks: [{count}] name={name}, len={len(face_landmarks)}, face_landmarks={face_landmarks}" )
 		#
-		# left_eyebrow=[(475, 232), (491, 219), (514, 219), (537, 225), (559, 237)]
+		# draw face landmarks
 		#
-		# print( f'left_eyebrow={face_landmarks["left_eyebrow"]}')
-		# print( f'left_eye={face_landmarks["left_eye"]}, right_eye={face_landmarks["right_eye"]}')
-		# print( f'left_eye={face_landmarks["left_eye"]}, right_eyebrow={face_landmarks["right_eyebrow"]}')
-		# print( f'left_eye0={face_landmarks["left_eye"][0]}')
-		# d = PIL.ImageDraw.Draw(pil_image, 'RGBA')
+		global facelandmarks_ext
+		if facelandmarks_ext == 0:
+			# 	'chin'			: [(412, 221), (413, 261), (418, 302), (428, 339), (445, 373), (465, 405), (487, 433), (514, 454), (545, 461), (576, 455), (601, 435), (621, 407), (638, 376), (654, 343), (665, 308), (671, 268), (673, 230)],
+			# 	'left_eyebrow'	: [(443, 199), (458, 178), (483, 172), (509, 178), (533, 189)],
+			# 	'right_eyebrow'	: [(574, 190), (595, 180), (619, 176), (641, 182), (653, 201)],
+			# 	'nose_bridge'	: [(554, 226), (555, 253), (556, 279), (557, 307)],
+			# 	'nose_tip'		: [(528, 322), (540, 327), (554, 331), (568, 327), (579, 322)],
+			# 	'left_eye'		: [(470, 232), (484, 230), (501, 230), (516, 235), (500, 239), (484, 239)],
+			# 	'right_eye'		: [(585, 236), (599, 232), (614, 232), (627, 236), (615, 241), (600, 241)],
+			# 	'top_lip'		: [(511, 368), (530, 362), (543, 358), (553, 362), (565, 358), (574, 363), (588, 371), (580, 371), (565, 370), (553, 372), (543, 370), (520, 369)],
+			# 	'bottom_lip'	: [(588, 371), (574, 383), (564, 388), (552, 390), (541, 388), (529, 382), (511, 368), (520, 369), (542, 371), (553, 373), (564, 372), (580, 371)]
+			offset = 4
+			for c in face_landmarks['chin']:
+				d.arc(c+(c[0]+offset,c[1]+offset), start=0, end=360, fill=(255, 255, 0))
+			for c in face_landmarks['left_eyebrow']:
+				d.arc(c+(c[0]+offset,c[1]+offset), start=0, end=360, fill=(255, 255, 0))
+			for c in face_landmarks['right_eyebrow']:
+				d.arc(c+(c[0]+offset,c[1]+offset), start=0, end=360, fill=(255, 255, 0))
+			for c in face_landmarks['nose_bridge']:
+				d.arc(c+(c[0]+offset,c[1]+offset), start=0, end=360, fill=(255, 255, 0))
+			for c in face_landmarks['nose_tip']:
+				d.arc(c+(c[0]+offset,c[1]+offset), start=0, end=360, fill=(255, 255, 0))
+			for c in face_landmarks['left_eye']:
+				d.arc(c+(c[0]+offset,c[1]+offset), start=0, end=360, fill=(255, 255, 0))
+			for c in face_landmarks['right_eye']:
+				d.arc(c+(c[0]+offset,c[1]+offset), start=0, end=360, fill=(255, 255, 0))
+			for c in face_landmarks['top_lip']:
+				d.arc(c+(c[0]+offset,c[1]+offset), start=0, end=360, fill=(255, 255, 0))
+			for c in face_landmarks['bottom_lip']:
+				d.arc(c+(c[0]+offset,c[1]+offset), start=0, end=360, fill=(255, 255, 0))
 
-		d.polygon(face_landmarks['left_eye' ], fill=None, outline=(255,255,255))
-		d.polygon(face_landmarks['right_eye'], fill=None, outline=(255,255,255))
+		elif facelandmarks_ext == 1:
+			d.polygon(face_landmarks['left_eye' ], fill=None, outline=(255,255,255))
+			d.polygon(face_landmarks['right_eye'], fill=None, outline=(255,255,255))
 
-		# a = face_landmarks['left_eye'][0]
-		# print(f'a={a}')
-		# b = [a]
-		# print(f'b={b}')
-		# print(f'eyebrow={face_landmarks["left_eyebrow"]}')
-		# c = b + face_landmarks['left_eyebrow']
-		# print(f'c={c}')
+			eL = [face_landmarks['left_eye'][0]] + face_landmarks['left_eyebrow'] + [face_landmarks['left_eye'][3]] + [face_landmarks['left_eye'][4]] + [face_landmarks['left_eye'][5]]
+			d.polygon(eL, fill=None, outline=(255,255,255))
+			eR = [face_landmarks['right_eye'][0]] + face_landmarks['right_eyebrow'] + [face_landmarks['right_eye'][3]] + [face_landmarks['right_eye'][4]] + [face_landmarks['right_eye'][5]]
+			d.polygon(eR, fill=None, outline=(255,255,255))
 
-		eL = [face_landmarks['left_eye'][0]] + face_landmarks['left_eyebrow'] + [face_landmarks['left_eye'][3]] + [face_landmarks['left_eye'][4]] + [face_landmarks['left_eye'][5]]
-		d.polygon(eL, fill=None, outline=(255,255,255))
-		eR = [face_landmarks['right_eye'][0]] + face_landmarks['right_eyebrow'] + [face_landmarks['right_eye'][3]] + [face_landmarks['right_eye'][4]] + [face_landmarks['right_eye'][5]]
-		d.polygon(eR, fill=None, outline=(255,255,255))
+			aL = [face_landmarks['left_eye' ][3]] + [face_landmarks['nose_bridge'][-1]] + [face_landmarks['nose_tip'][ 0]]
+			d.polygon(aL, fill=None, outline=(255,255,255))
+			aR = [face_landmarks['right_eye'][0]] + [face_landmarks['nose_bridge'][-1]] + [face_landmarks['nose_tip'][-1]]
+			d.polygon(aR, fill=None, outline=(255,255,255))
 
-		aL = [face_landmarks['left_eye' ][3]] + [face_landmarks['nose_bridge'][-1]] + [face_landmarks['nose_tip'][ 0]]
-		d.polygon(aL, fill=None, outline=(255,255,255))
-		aR = [face_landmarks['right_eye'][0]] + [face_landmarks['nose_bridge'][-1]] + [face_landmarks['nose_tip'][-1]]
-		d.polygon(aR, fill=None, outline=(255,255,255))
+			bL = [face_landmarks['left_eye' ][4]] + [face_landmarks['top_lip'][0]] + [face_landmarks['nose_tip'][ 0]] + [face_landmarks['left_eye' ][3]]
+			d.polygon(bL, fill=None, outline=(255,255,255))
+			bR = [face_landmarks['right_eye'][5]] + [face_landmarks['top_lip'][6]] + [face_landmarks['nose_tip'][-1]] + [face_landmarks['right_eye'][0]]
+			d.polygon(bR, fill=None, outline=(255,255,255))
 
-		bL = [face_landmarks['left_eye' ][4]] + [face_landmarks['top_lip'][0]] + [face_landmarks['nose_tip'][ 0]] + [face_landmarks['left_eye' ][3]]
-		d.polygon(bL, fill=None, outline=(255,255,255))
-		bR = [face_landmarks['right_eye'][5]] + [face_landmarks['top_lip'][6]] + [face_landmarks['nose_tip'][-1]] + [face_landmarks['right_eye'][0]]
-		d.polygon(bR, fill=None, outline=(255,255,255))
+			cL = [face_landmarks['top_lip'][0]] + [face_landmarks['nose_bridge'][-1]] + [face_landmarks['nose_tip'][ 0]]
+			d.polygon(cL, fill=None, outline=(255,255,255))
+			cR = [face_landmarks['top_lip'][6]] + [face_landmarks['nose_bridge'][-1]] + [face_landmarks['nose_tip'][-1]]
+			d.polygon(cR, fill=None, outline=(255,255,255))
 
-		cL = [face_landmarks['top_lip'][0]] + [face_landmarks['nose_bridge'][-1]] + [face_landmarks['nose_tip'][ 0]]
-		d.polygon(cL, fill=None, outline=(255,255,255))
-		cR = [face_landmarks['top_lip'][6]] + [face_landmarks['nose_bridge'][-1]] + [face_landmarks['nose_tip'][-1]]
-		d.polygon(cR, fill=None, outline=(255,255,255))
+			d.polygon(face_landmarks['top_lip'   ], fill=None, outline=(255,255,255))
+			d.polygon(face_landmarks['bottom_lip'], fill=None, outline=(255,255,255))
 
-		d.polygon(face_landmarks['top_lip'   ], fill=None, outline=(255,255,255))
-		d.polygon(face_landmarks['bottom_lip'], fill=None, outline=(255,255,255))
+		elif facelandmarks_ext == 2:
+			# Make the eyebrows into a nightmare
+			d.line(face_landmarks['left_eyebrow'], fill=(0, 0, 0, 255), width=3)
+			d.line(face_landmarks['right_eyebrow'], fill=(0, 0, 0, 255), width=3)
+			d.polygon(face_landmarks['left_eyebrow'], fill=(0, 0, 0, 255))
+			d.polygon(face_landmarks['right_eyebrow'], fill=(0, 0, 0, 255))
 
-		"""
-		# Make the eyebrows into a nightmare
-		d.line(face_landmarks['left_eyebrow'], fill=(0, 0, 0, 255), width=3)
-		d.line(face_landmarks['right_eyebrow'], fill=(0, 0, 0, 255), width=3)
-		d.polygon(face_landmarks['left_eyebrow'], fill=(0, 0, 0, 255))
-		d.polygon(face_landmarks['right_eyebrow'], fill=(0, 0, 0, 255))
+			# Gloss the lips
+			d.line(face_landmarks['top_lip'], fill=(0, 0, 0, 255), width=10)
+			d.line(face_landmarks['bottom_lip'], fill=(0, 0, 0, 255), width=10)
 
-		# Gloss the lips
-		d.line(face_landmarks['top_lip'], fill=(0, 0, 0, 255), width=10)
-		d.line(face_landmarks['bottom_lip'], fill=(0, 0, 0, 255), width=10)
+			d.polygon(face_landmarks['bottom_lip'], fill=(255, 0, 0, 255))
+			d.polygon(face_landmarks['top_lip'], fill=(255, 0, 0, 255))
+			d.line(face_landmarks['top_lip'], fill=(0, 0, 0, 255), width=2)
+			d.line(face_landmarks['bottom_lip'], fill=(0, 0, 0, 255), width=2)
 
-		d.polygon(face_landmarks['bottom_lip'], fill=(255, 0, 0, 255))
-		d.polygon(face_landmarks['top_lip'], fill=(255, 0, 0, 255))
-		d.line(face_landmarks['top_lip'], fill=(0, 0, 0, 255), width=2)
-		d.line(face_landmarks['bottom_lip'], fill=(0, 0, 0, 255), width=2)
+			# Chin
+			d.polygon(face_landmarks['chin'], fill=(255, 0, 0, 16))
 
-		# Chin
-		d.polygon(face_landmarks['chin'], fill=(255, 0, 0, 16))
+			# Apply some eyeliner
+			d.line(face_landmarks['left_eye'] + [face_landmarks['left_eye'][0]], fill=(10, 0, 0, 255), width=6)
+			d.line(face_landmarks['right_eye'] + [face_landmarks['right_eye'][0]], fill=(10, 0, 0, 255), width=6)
 
-		# Apply some eyeliner
-		d.line(face_landmarks['left_eye'] + [face_landmarks['left_eye'][0]], fill=(10, 0, 0, 255), width=6)
-		d.line(face_landmarks['right_eye'] + [face_landmarks['right_eye'][0]], fill=(10, 0, 0, 255), width=6)
+			# Sparkle the eyes
+			d.polygon(face_landmarks['left_eye'], fill=(255, 0, 0, 200))
+			d.polygon(face_landmarks['right_eye'], fill=(255, 0, 0, 200))
 
-		# Sparkle the eyes
-		d.polygon(face_landmarks['left_eye'], fill=(255, 0, 0, 200))
-		d.polygon(face_landmarks['right_eye'], fill=(255, 0, 0, 200))
-
-		# from IPython.display import display
-		# display(pil_image)
-		# pil_image.show()
-		"""
+		count +=1
+		break
 
 	return pil2cv(pil_image)
 
@@ -264,8 +299,8 @@ def scan_known_people(folder):
 	# import requests
 	# from io import BytesIO
 	# response = requests.get("https://raw.githubusercontent.com/solegaonkar/solegaonkar.github.io/master/img/rahul1.jpeg")
-	# fr_image = faced.load_image_file(BytesIO(response.content))
-	# face_locations = faced.face_locations(fr_image)
+	# frame = faced.load_image_file(BytesIO(response.content))
+	# face_locations = faced.face_locations(frame)
 	#
 	if not os.path.exists(folder):
 		# print(f'scan_known_people: no such folder={folder}')
@@ -304,8 +339,8 @@ def image_files_in_folder(folder):
 #
 # find face locations by haarcascade
 #
-def face_locations_by_haarcascade(frame, rgb_frame, cascade):
-	gray	= cv2.cvtColor(rgb_frame, cv2.COLOR_RGB2GRAY)
+def face_locations_by_haarcascade(frame, cascade):
+	gray	= cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
 	faces	= cascade.detectMultiScale(gray, 1.3, 5)
 
 	#
@@ -326,7 +361,7 @@ def face_locations_by_haarcascade(frame, rgb_frame, cascade):
 # find face locations by YOLO
 #	https://github.com/sthanhng/yoloface
 #
-def face_locations_by_YOLO(frame, rgb_frame, YOLOnet):
+def face_locations_by_YOLO(frame, YOLOnet):
 
 	# Create a 4D blob from a frame.
 	# blob = cv2.dnn.blobFromImage(frame, 1 / 255, (IMG_WIDTH, IMG_HEIGHT), [0, 0, 0], 1, crop=False)
@@ -365,12 +400,12 @@ def face_locations_by_YOLO(frame, rgb_frame, YOLOnet):
 #	https://github.com/iitzco/faced
 #	pip install git+https://github.com/iitzco/faced.git
 #
-def face_locations_by_FaceDetector(frame, rgb_frame):
+def face_locations_by_FaceDetector(frame):
 	#
 	# find faces
 	#	return: x, y, w, h, ?
 	global	face_detector
-	faces	= face_detector.predict(rgb_frame, thresh=0.85)
+	faces	= face_detector.predict(frame, thresh=0.85)
 	# print (f"FaceDetector faces:{faces}")
 
 	#
@@ -538,14 +573,14 @@ def	main(mode:int=0, device:int=0, size:int=480, cfg:str='YOLOv3-cfg', weights:s
 			face_locations	= faced.face_locations(rgb_frame, number_of_times_to_upsample=1, model=name)
 		elif mode == 1:
 			# global	face_cascade
-			face_locations	= face_locations_by_haarcascade(frame, rgb_frame, face_cascade)
+			face_locations	= face_locations_by_haarcascade(rgb_frame, face_cascade)
 
 		elif mode == 2:
 			# global	YOLOnet
-			face_locations	= face_locations_by_YOLO(frame, rgb_frame, YOLOnet)
+			face_locations	= face_locations_by_YOLO(rgb_frame, YOLOnet)
 
 		elif mode == 3:
-			face_locations	= face_locations_by_FaceDetector(frame, rgb_frame)
+			face_locations	= face_locations_by_FaceDetector(rgb_frame)
 
 		else:
 			print( f'detecting faces: unknown={mode}.' )
@@ -560,7 +595,7 @@ def	main(mode:int=0, device:int=0, size:int=480, cfg:str='YOLOv3-cfg', weights:s
 			w = face_locations[0][1] - x	# x + w	: right
 			h = face_locations[0][2] - y	# y + h : bottom
 			# print( f"face_locations={face_locations}, 0:x={x:3d}, y={y:3d}, w={w:3d}, h={h:3d}", end="")
-			print( f"face_locations:{len(face_locations):2d} persons, x={x:3d}, y={y:3d}, w={w:3d}, h={h:3d} : ", end="")
+			print( f'face_locations:{len(face_locations):2d} persons, x={x:3d}, y={y:3d}, w={w:3d}, h={h:3d} : ', end='\n')
 
 		#
 		# face encoding features(vector)
@@ -589,12 +624,17 @@ def	main(mode:int=0, device:int=0, size:int=480, cfg:str='YOLOv3-cfg', weights:s
 			if matches[best_match_index]:
 				name = known_face_names[best_match_index]
 				# print( f" !!!found...{name} d({best_match_index})={face_distances[best_match_index]}", end="\n" )
-				print( f"{name}\td[{best_match_index:2d}]={face_distances[best_match_index]:6.4f},\t", end="" )
+				# print( f"{name}\td[{best_match_index:2d}]={face_distances[best_match_index]:6.4f},\t", end="" )
+				print( f"{name}:d[{best_match_index:2d}]={face_distances[best_match_index]:6.4f},\t", end="\n" )
 				#
 				# face landmarks
 				#
 				if facemarks == True:
-					frame = draw_face_landmarks(rgb_frame, top, right, bottom, left, name)
+					rgb_frame = draw_face_landmarks(rgb_frame, top, right, bottom, left, name)
+					pass
+			else:
+				# print( f"1 {name}\td[{best_match_index:2d}]={face_distances[best_match_index]:6.4f},\t", end="\n" )
+				pass
 
 			#
 			# Scale back up face locations since the frame we detected in was scaled to 1/4 size
@@ -609,16 +649,41 @@ def	main(mode:int=0, device:int=0, size:int=480, cfg:str='YOLOv3-cfg', weights:s
 			# mosaic
 			#
 			if mosaic == True:
-				frame = mosaic_area(frame, left, top, right-left, bottom-top, ratio=0.05)
+				rgb_frame = mosaic_area(rgb_frame, left, top, right-left, bottom-top, ratio=0.05)
 
 			#
 			# Draw a box,label(name) around the face
 			#
+			print(f'facemarks={facemarks}, name={name}')
 			if facemarks == False:
-				cv2.rectangle(frame, (left, top), (right, bottom), (0, 0, 255), 2)
-				cv2.rectangle(frame, (left, bottom - 35), (right, bottom), (0, 0, 255), cv2.FILLED)
+				cv2.rectangle(rgb_frame, (left, top), (right, bottom), (0, 0, 255), 2)
+				cv2.rectangle(rgb_frame, (left, bottom-35), (right, bottom), (0, 0, 255), cv2.FILLED)
 				font = cv2.FONT_HERSHEY_DUPLEX
-				cv2.putText(frame, name, (left + 6, bottom - 6), font, 1.0, (255, 255, 255), 1)
+				cv2.putText(rgb_frame, name, (left+6, bottom-6), font, 1.0, (255, 255, 255), 1, cv2.LINE_AA)
+			else:
+				x = left
+				y = top
+				w = right  - left
+				h = bottom - top
+				# img = cv2.line(img,(0,0),(511,511),(255,0,0),5)
+				s = [(x,y+int(h/3)), (x,y), (x+int(w/3),y)]
+				cv2.line(rgb_frame, s[0], s[1], color=(0, 255, 0), thickness=3, lineType=cv2.LINE_AA)
+				cv2.line(rgb_frame, s[1], s[2], color=(0, 255, 0), thickness=3, lineType=cv2.LINE_AA)
+
+				s = [(x+w-int(w/3),y), (x+w,y), (x+w,y+int(h/3))]
+				cv2.line(rgb_frame, s[0], s[1], color=(0, 255, 0), thickness=3, lineType=cv2.LINE_AA)
+				cv2.line(rgb_frame, s[1], s[2], color=(0, 255, 0), thickness=3, lineType=cv2.LINE_AA)
+				
+				s = [(x,y+h-int(h/3)), (x,y+h), (x+int(w/3),y+h)]
+				cv2.line(rgb_frame, s[0], s[1], color=(0, 255, 0), thickness=3, lineType=cv2.LINE_AA)
+				cv2.line(rgb_frame, s[1], s[2], color=(0, 255, 0), thickness=3, lineType=cv2.LINE_AA)
+				
+				s = [(x+w-int(w/3),y+h), (x+w,y+h), (x+w,y+h-int(h/3))]
+				cv2.line(rgb_frame, s[0], s[1], color=(0, 255, 0), thickness=3, lineType=cv2.LINE_AA)
+				cv2.line(rgb_frame, s[1], s[2], color=(0, 255, 0), thickness=3, lineType=cv2.LINE_AA)
+
+				font = cv2.FONT_HERSHEY_DUPLEX
+				cv2.putText(rgb_frame, name, (left+6, bottom-6), font, 1.0, (0, 255, 0), 1, cv2.LINE_AA)
 
 		if len(face_locations) > 0:
 			print(f'.')
@@ -633,25 +698,29 @@ def	main(mode:int=0, device:int=0, size:int=480, cfg:str='YOLOv3-cfg', weights:s
 			tm.start()
 			fps_count	= 0
 
-		cv2.putText(frame, 'FPS:{:.2f}'.format(fps_number), (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1.0, (0, 255, 0), thickness=2)
-		# cv2.imshow(window_name, frame)
+		cv2.putText(rgb_frame, 'FPS:{:.2f}'.format(fps_number), (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1.0, (0, 255, 0), thickness=2, lineType=cv2.LINE_AA)
 		fps_count += 1
 
 		# Display the resulting image
 		if ret:
-			# cv2.imshow('Video', frame)
+			frame = cv2.cvtColor(rgb_frame, cv2.COLOR_RGB2BGR)
 			cv2.imshow(windowName, frame)
 			pass
 
 		#
 		# keyboard operation
 		#
+		global key_save
+		global key_facelandmarks
+		global key_mosaic
+		global key_quit
+
 		c = cv2.waitKey(1) & 0xff
 
-		if c == ord('q'):
+		if c == ord(key_quit) or c == 27:
 			break
 
-		elif c == 32:	# spaceで保存
+		elif c == ord(key_save):	# spaceで保存 32
 			# cv2.imwrite( './filename_' + str(count) + '.jpg', frame ) #001~連番で保存
 			bewrite		= True
 			filename	= "screenshot_" + str(count) + ".jpg"
@@ -667,14 +736,16 @@ def	main(mode:int=0, device:int=0, size:int=480, cfg:str='YOLOv3-cfg', weights:s
 				count += 1
 				print('save done:' + filename)
 
-		elif c == ord('m'):
+		elif c == ord(key_facelandmarks):
 			facemarks = not facemarks
 
-		elif c == ord('a'):
+		elif c == ord(key_mosaic):
 			mosaic = not mosaic
 
-		elif c == 27:
-			break
+		elif c == ord(key_facelandmarks_ext):
+			global facelandmarks_ext
+			facelandmarks_ext += 1
+			_, facelandmarks_ext = divmod(facelandmarks_ext, 3)
 
 	#
 	# release handle to the webcam
@@ -757,7 +828,9 @@ if __name__ == '__main__':
 	#
 	# args
 	#
-	print(f'mode:{args.mode}')
+	print(f'python {sys.argv[0]}')
+	print(f'  key: quit="{key_quit}", save="{key_save}", facelandmarks="{key_facelandmarks}", mosaic="{key_mosaic}"')
+	print(f'  face detection mode:{args.mode}')
 
 	#
 	# import
